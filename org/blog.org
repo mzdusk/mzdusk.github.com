@@ -1,0 +1,179 @@
+#+TITLE: mzduskの日記
+#+URL: http://mzdusk.github.com
+#+STARTUP: logdone
+#+DISQUS: mzdusk
+#+PUBLISH_DIR: ..
+
+
+* mzdusk の日記
+  :PROPERTIES:
+  :PAGE: index.html
+  :TEMPLATE: blog_static_no_title.html
+  :END:
+
+#+HTML: <h3><small>技術メモ、その他</small></h3>
+
+-----
+
+** 最近の投稿
+   - [[file:{lisp}(format%20"%25s/%25s"%20(ob:path-to-root)%20(ob:post-htmlfile%20(ob:get-last-post%20"Blog"%200))){/lisp}][{lisp}(ob:post-title (ob:get-last-post "Blog" 0)){/lisp}]]
+
+
+* Blog Details
+** Copyright
+   :PROPERTIES:
+   :SNIPPET: t
+   :END:
+
+   Copyright © 2013 Yusuke MATSUDA
+
+** About
+   :PROPERTIES:
+   :SNIPPET: t
+   :END:
+
+   - 得意なもの :: Ruby on Rails
+   - 現在の興味 :: テスト駆動開発
+
+** Navigation
+   :PROPERTIES:
+   :SNIPPET: t
+   :END:
+
+- [[file:#][/icon-file icon-white/ 最近の投稿]]
+  - [[file:{lisp}(format%20"%25s/%25s"%20(ob:path-to-root)%20(ob:post-htmlfile%20(ob:get-last-post%20"Blog"%200))){/lisp}][{lisp}(ob:post-title (ob:get-last-post "Blog" 0)){/lisp}]]
+
+- [[file:{lisp}(ob:path-to-root){/lisp}/tags][/icon-tags icon-white/ Tags]]
+
+- [[file:{lisp}(ob:path-to-root){/lisp}/archives.html][/icon-list icon-white/ Archives]]
+
+- [[file:{lisp}(ob:path-to-root){/lisp}/index.xml][/icon-rss icon-white/ RSS]]
+
+** Navigation Footer
+   :PROPERTIES:
+   :SNIPPET: t
+   :END:
+
+   - [[http://www.facebook.com/yusuke.matsuda.58][/icon-facebook/ Facebook]]
+
+   - [[https://twitter.com/mzdusk][/icon-twitter/ Twitter]]
+
+   - [[https://github.com/mzdusk][/icon-github/ GitHub]]
+
+* Blog
+** DONE o-blogでブログを始める					     :o@blog:
+   CLOSED: [2013-03-14 Thu 23:27]
+   :PROPERTIES:
+   :CUSTOM_ID: starting-o-blog
+   :END:
+
+   Emacs には [[http://orgmode.org][Org-mode]] というアウトライナー (の域を超えた何か) があります。
+   [[http://renard.github.com/o-blog][o-blog]] は org-mode でブログを書くためのツールなんですが、
+   公式ページはいまいち説明が足りなくて、何をすればいいのかわかりにくいです。
+   とりあえず最初に最低限やっておけばいいことをまとめておきます。
+
+*** ブログ全体の設定
+
+   とりあえず必要なのは、タイトルの設定。それ以外の項目はそれほど重要ではないと思います。
+   ブログのタイトルは =TITLE= ヘッダで設定します。
+
+   ブログはデフォルトでは =out= ディレクトリに出力されます。
+   変えたい場合は =PUBLISH_DIR= に org ファイルからの相対パスで指定します。
+
+   あと、コメントシステムに Disqus が使えるようになっているので、
+   アカウントを持っていれば設定しておけばいいでしょう。
+
+#+BEGIN_SRC org
+,#+TITLE: Blog Title
+,#+DISQUS: disqus-account
+,#+PUBLISH_DIR: blog
+#+END_SRC
+   
+*** トップページの整備
+
+    トップページは次のようにプロパティの =PAGE= と =TEMPLATE= をそれぞれ =index.html= と
+    =blog_static_no_title.html= を指定した静的ページを用意します。
+
+#+BEGIN_SRC org
+,* Page Title
+,  :PROPERTIES:
+,  :PAGE: index.html
+,  :TEMPLATE: blog_static_no_title.html
+,  :END:
+,
+,トップページの内容
+#+END_SRC
+
+    この状態でページを生成してみると、ところどころに =Lisp error= なるものが表示されます。
+    テンプレートをいじって消すという方法もありますが、せっかくなので項目を用意してこれを解消します。
+    
+    ページ上部のタイトル横のエラーは =Navigation= の項目を用意すると解消されます。
+    ページ下部の About, Links はそれぞれ =About= と =Navigation Footer= の
+    項目を用意すると表示されます。
+    また、見えにくいんですが Powered by o-blog の上に著作権表示の部分があります。
+    これは =Copyright= の項目を用意すればいいです。
+
+    この部分の設定はこんな感じ。
+
+#+BEGIN_SRC org
+,* Blog Details
+,** Copyright
+,   :PROPERTIES:
+,   :SNIPPET: t
+,   :END:
+,
+,   Copyright © 20XX Foo Bar
+,
+,** About
+,   :PROPERTIES:
+,   :SNIPPET: t
+,   :END:
+,
+,   This is About
+,
+,** Navigation
+,   :PROPERTIES:
+,   :SNIPPET: t
+,   :END:
+,
+,- [[file:#][Blog Posts]]
+,  - [[file:post01][Post 01]]
+,  - [[file:post02][Post 01]]
+,
+,** Navigation Footer
+,   :PROPERTIES:
+,   :SNIPPET: t
+,   :END:
+,
+,   - [[http://google.com][Google]]
+#+END_SRC
+
+    なお、 =Navigation= には、リストを 2 階層にすると、2 階層目のリンクがドロップダウンリストで
+    表示されるという便利機能があります。
+
+*** エントリの作成
+
+    o-blog では DONE 状態の項目がエントリとして扱われ、その見出しがエントリのタイトルとなります。
+    2 階層にしておけば、第 1 階層の見出しがカテゴリとなります。
+    カテゴリは =category= プロパティでも設定できます。
+
+    エントリのファイル名はタイトルから生成されますが、
+    日本語のタイトルでは日本語の部分が無視されてしまうので、
+    別にファイル名を指定したければ、 =CUSTOM_ID= で設定できます。
+
+#+BEGIN_SRC org
+,* Blog
+,** DONE 日本語タイトルの日記
+,   :PROPERTIES:
+,   :CUSTOM_ID: japanese-title-entry
+,   :END:
+
+,   ほげほげ
+#+END_SRC
+
+    最後に
+
+    : M-x org-publish-blog
+
+    でブログ全体が生成されます。
+
