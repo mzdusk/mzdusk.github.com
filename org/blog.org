@@ -177,3 +177,10 @@
 
     でブログ全体が生成されます。
 
+
+* Debug
+  :PROPERTIES:
+  :PAGE:     debug.html
+  :TEMPLATE: debug.html
+  :SITEMAP:  f
+  :END:
