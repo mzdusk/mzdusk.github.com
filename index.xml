@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>mzduskの日記</title>
-  <link href="http://mzdusk.github.comindex.xml" rel="self" />
-  <link href="http://mzdusk.github.com"/>
-  <updated>2013-03-17T23:57:31Z</updated>
-  <id>http://mzdusk.github.comindex.xml</id>
-  <entry><title type="html">o-blogでブログを始める</title><author><name>nil</name></author><link href="http://mzdusk.github.com/blog/2013/03/14_starting-o-blog.html"/><updated>2013-03-14T23:27:00Z</updated><published>2013-03-14T23:27:00Z</published><id>blog/2013/03/14_starting-o-blog.html</id><category scheme="/tags/o-blog.html" term="o-blog" label="o-blog"/><content type="html">&lt;p&gt;
+  <link href="http://mzdusk.github.com/index.xml" rel="self" />
+  <link href="http://mzdusk.github.com/"/>
+  <updated>2013-03-18T23:47:12Z</updated>
+  <id>http://mzdusk.github.com/index.xml</id>
+  <entry><title type="html">o-blogでブログを始める</title><author><name>mzdusk</name></author><link href="http://mzdusk.github.com//blog/2013/03/14_starting-o-blog.html"/><updated>2013-03-14T23:27:00Z</updated><published>2013-03-14T23:27:00Z</published><id>blog/2013/03/14_starting-o-blog.html</id><category scheme="/tags/o-blog.html" term="o-blog" label="o-blog"/><content type="html">&lt;p&gt;
   Emacs &#12395;&#12399; &lt;a href="http://orgmode.org"&gt;Org-mode&lt;/a&gt; &#12392;&#12356;&#12358;&#12450;&#12454;&#12488;&#12521;&#12452;&#12490;&#12540; (&#12398;&#22495;&#12434;&#36229;&#12360;&#12383;&#20309;&#12363;) &#12364;&#12354;&#12426;&#12414;&#12377;&#12290;
   &lt;a href="http://renard.github.com/o-blog"&gt;o-blog&lt;/a&gt; &#12399; org-mode &#12391;&#12502;&#12525;&#12464;&#12434;&#26360;&#12367;&#12383;&#12417;&#12398;&#12484;&#12540;&#12523;&#12394;&#12435;&#12391;&#12377;&#12364;&#12289;
   &#20844;&#24335;&#12506;&#12540;&#12472;&#12399;&#12356;&#12414;&#12356;&#12385;&#35500;&#26126;&#12364;&#36275;&#12426;&#12394;&#12367;&#12390;&#12289;&#20309;&#12434;&#12377;&#12428;&#12400;&#12356;&#12356;&#12398;&#12363;&#12431;&#12363;&#12426;&#12395;&#12367;&#12356;&#12391;&#12377;&#12290;

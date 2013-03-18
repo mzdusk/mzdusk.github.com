@@ -1,9 +1,9 @@
 #+TITLE: mzduskの日記
-#+URL: http://mzdusk.github.com
+#+URL: http://mzdusk.github.com/
 #+STARTUP: logdone
 #+DISQUS: mzdusk
 #+PUBLISH_DIR: ..
-
+#+AUTHOR: mzdusk
 
 * mzdusk の日記
   :PROPERTIES:
