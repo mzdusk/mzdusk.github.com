@@ -17,7 +17,7 @@
 
 ** 最近の投稿
    - [[file:{lisp}(format%20"%25s/%25s"%20(ob:path-to-root)%20(ob:post-htmlfile%20(ob:get-last-post%20"Blog"%200))){/lisp}][{lisp}(ob:post-title (ob:get-last-post "Blog" 0)){/lisp}]]
-
+   - [[file:{lisp}(format%20"%25s/%25s"%20(ob:path-to-root)%20(ob:post-htmlfile%20(ob:get-last-post%20"Blog"%201))){/lisp}][{lisp}(ob:post-title (ob:get-last-post "Blog" 1)){/lisp}]]
 
 * Blog Details
 ** Copyright
@@ -42,6 +42,7 @@
 
 - [[file:#][/icon-file icon-white/ 最近の投稿]]
   - [[file:{lisp}(format%20"%25s/%25s"%20(ob:path-to-root)%20(ob:post-htmlfile%20(ob:get-last-post%20"Blog"%200))){/lisp}][{lisp}(ob:post-title (ob:get-last-post "Blog" 0)){/lisp}]]
+  - [[file:{lisp}(format%20"%25s/%25s"%20(ob:path-to-root)%20(ob:post-htmlfile%20(ob:get-last-post%20"Blog"%201))){/lisp}][{lisp}(ob:post-title (ob:get-last-post "Blog" 1)){/lisp}]]
 
 - [[file:{lisp}(ob:path-to-root){/lisp}/tags][/icon-tags icon-white/ Tags]]
 
@@ -59,6 +60,13 @@
    - [[https://twitter.com/mzdusk][/icon-twitter/ Twitter]]
 
    - [[https://github.com/mzdusk][/icon-github/ GitHub]]
+
+* Debug
+  :PROPERTIES:
+  :PAGE:     debug.html
+  :TEMPLATE: debug.html
+  :SITEMAP:  f
+  :END:
 
 * Blog
 ** DONE o-blogでブログを始める					     :o@blog:
@@ -178,9 +186,31 @@
     でブログ全体が生成されます。
 
 
-* Debug
-  :PROPERTIES:
-  :PAGE:     debug.html
-  :TEMPLATE: debug.html
-  :SITEMAP:  f
-  :END:
+
+** DONE Librarian 開発構想				     :memo:librarian:
+   CLOSED: [2013-03-19 Tue 22:50]
+   :PROPERTIES:
+   :CUSTOM_ID: concept-librarian
+   :END:
+
+   Web アプリケーションのネタを思いついたのでメモ。
+
+*** Librarian
+    音楽団体向け Web アプリケーション。
+
+    演奏会や練習日程、楽譜などの管理を行う。
+    アプリケーション名は楽団で楽譜の管理を担当する者 (ライブラリアン) から。
+
+**** 主な機能
+     - 演奏会情報の管理
+       - 日程
+       - 曲目
+     - 練習日程の管理
+     - 楽譜の管理
+     - 団員の管理
+       - 担当パート
+
+
+     ログインユーザ (団員) は練習日程の詳細や楽譜のダウンロードが可能。
+     ゲストは次の演奏会の情報のみ参照可能。
+

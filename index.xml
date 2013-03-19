@@ -3,9 +3,62 @@
   <title>mzduskの日記</title>
   <link href="http://mzdusk.github.com/index.xml" rel="self" />
   <link href="http://mzdusk.github.com/"/>
-  <updated>2013-03-18T23:47:12Z</updated>
+  <updated>2013-03-19T22:58:45Z</updated>
   <id>http://mzdusk.github.com/index.xml</id>
-  <entry><title type="html">o-blogでブログを始める</title><author><name>mzdusk</name></author><link href="http://mzdusk.github.com//blog/2013/03/14_starting-o-blog.html"/><updated>2013-03-14T23:27:00Z</updated><published>2013-03-14T23:27:00Z</published><id>blog/2013/03/14_starting-o-blog.html</id><category scheme="/tags/o-blog.html" term="o-blog" label="o-blog"/><content type="html">&lt;p&gt;
+  <entry><title type="html">Librarian 開発構想</title><author><name>mzdusk</name></author><link href="http://mzdusk.github.com//blog/2013/03/19_concept-librarian.html"/><updated>2013-03-19T22:50:00Z</updated><published>2013-03-19T22:50:00Z</published><id>blog/2013/03/19_concept-librarian.html</id><category scheme="/tags/memo.html" term="memo" label="memo"/><category scheme="/tags/librarian.html" term="librarian" label="librarian"/><content type="html">&lt;p&gt;
+  Web &#12450;&#12503;&#12522;&#12465;&#12540;&#12471;&#12519;&#12531;&#12398;&#12493;&#12479;&#12434;&#24605;&#12356;&#12388;&#12356;&#12383;&#12398;&#12391;&#12513;&#12514;&#12290;
+&lt;/p&gt;
+
+&lt;div id="outline-container-1" class="outline-3"&gt;
+&lt;h3 id="sec-1"&gt;Librarian&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-1"&gt;
+
+&lt;p&gt;   &#38899;&#27005;&#22243;&#20307;&#21521;&#12369; Web &#12450;&#12503;&#12522;&#12465;&#12540;&#12471;&#12519;&#12531;&#12290;
+&lt;/p&gt;
+&lt;p&gt;
+   &#28436;&#22863;&#20250;&#12420;&#32244;&#32722;&#26085;&#31243;&#12289;&#27005;&#35676;&#12394;&#12393;&#12398;&#31649;&#29702;&#12434;&#34892;&#12358;&#12290;
+   &#12450;&#12503;&#12522;&#12465;&#12540;&#12471;&#12519;&#12531;&#21517;&#12399;&#27005;&#22243;&#12391;&#27005;&#35676;&#12398;&#31649;&#29702;&#12434;&#25285;&#24403;&#12377;&#12427;&#32773; (&#12521;&#12452;&#12502;&#12521;&#12522;&#12450;&#12531;) &#12363;&#12425;&#12290;
+&lt;/p&gt;
+
+&lt;/div&gt;
+
+&lt;div id="outline-container-1-1" class="outline-4"&gt;
+&lt;h4 id="sec-1-1"&gt;&#20027;&#12394;&#27231;&#33021;&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-1-1"&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&#28436;&#22863;&#20250;&#24773;&#22577;&#12398;&#31649;&#29702;
+&lt;ul&gt;
+&lt;li&gt;&#26085;&#31243;
+&lt;/li&gt;
+&lt;li&gt;&#26354;&#30446;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/li&gt;
+&lt;li&gt;&#32244;&#32722;&#26085;&#31243;&#12398;&#31649;&#29702;
+&lt;/li&gt;
+&lt;li&gt;&#27005;&#35676;&#12398;&#31649;&#29702;
+&lt;/li&gt;
+&lt;li&gt;&#22243;&#21729;&#12398;&#31649;&#29702;
+&lt;ul&gt;
+&lt;li&gt;&#25285;&#24403;&#12497;&#12540;&#12488;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/li&gt;
+&lt;/ul&gt;
+
+
+
+&lt;p&gt;
+    &#12525;&#12464;&#12452;&#12531;&#12518;&#12540;&#12470; (&#22243;&#21729;) &#12399;&#32244;&#32722;&#26085;&#31243;&#12398;&#35443;&#32048;&#12420;&#27005;&#35676;&#12398;&#12480;&#12454;&#12531;&#12525;&#12540;&#12489;&#12364;&#21487;&#33021;&#12290;
+    &#12466;&#12473;&#12488;&#12399;&#27425;&#12398;&#28436;&#22863;&#20250;&#12398;&#24773;&#22577;&#12398;&#12415;&#21442;&#29031;&#21487;&#33021;&#12290;
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</content></entry><entry><title type="html">o-blogでブログを始める</title><author><name>mzdusk</name></author><link href="http://mzdusk.github.com//blog/2013/03/14_starting-o-blog.html"/><updated>2013-03-14T23:27:00Z</updated><published>2013-03-14T23:27:00Z</published><id>blog/2013/03/14_starting-o-blog.html</id><category scheme="/tags/o-blog.html" term="o-blog" label="o-blog"/><content type="html">&lt;p&gt;
   Emacs &#12395;&#12399; &lt;a href="http://orgmode.org"&gt;Org-mode&lt;/a&gt; &#12392;&#12356;&#12358;&#12450;&#12454;&#12488;&#12521;&#12452;&#12490;&#12540; (&#12398;&#22495;&#12434;&#36229;&#12360;&#12383;&#20309;&#12363;) &#12364;&#12354;&#12426;&#12414;&#12377;&#12290;
   &lt;a href="http://renard.github.com/o-blog"&gt;o-blog&lt;/a&gt; &#12399; org-mode &#12391;&#12502;&#12525;&#12464;&#12434;&#26360;&#12367;&#12383;&#12417;&#12398;&#12484;&#12540;&#12523;&#12394;&#12435;&#12391;&#12377;&#12364;&#12289;
   &#20844;&#24335;&#12506;&#12540;&#12472;&#12399;&#12356;&#12414;&#12356;&#12385;&#35500;&#26126;&#12364;&#36275;&#12426;&#12394;&#12367;&#12390;&#12289;&#20309;&#12434;&#12377;&#12428;&#12400;&#12356;&#12356;&#12398;&#12363;&#12431;&#12363;&#12426;&#12395;&#12367;&#12356;&#12391;&#12377;&#12290;
@@ -161,6 +214,7 @@ M-x org-publish-blog
 &lt;p&gt;
     &#12391;&#12502;&#12525;&#12464;&#20840;&#20307;&#12364;&#29983;&#25104;&#12373;&#12428;&#12414;&#12377;&#12290;
 &lt;/p&gt;
+
 &lt;/div&gt;
 &lt;/div&gt;
 </content></entry>
