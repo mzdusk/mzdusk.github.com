@@ -18,6 +18,7 @@
 ** 最近の投稿
    - [[file:{lisp}(format%20"%25s/%25s"%20(ob:path-to-root)%20(ob:post-htmlfile%20(ob:get-last-post%20"Blog"%200))){/lisp}][{lisp}(ob:post-title (ob:get-last-post "Blog" 0)){/lisp}]]
    - [[file:{lisp}(format%20"%25s/%25s"%20(ob:path-to-root)%20(ob:post-htmlfile%20(ob:get-last-post%20"Blog"%201))){/lisp}][{lisp}(ob:post-title (ob:get-last-post "Blog" 1)){/lisp}]]
+   - [[file:{lisp}(format%20"%25s/%25s"%20(ob:path-to-root)%20(ob:post-htmlfile%20(ob:get-last-post%20"Blog"%202))){/lisp}][{lisp}(ob:post-title (ob:get-last-post "Blog" 2)){/lisp}]]
 
 * Blog Details
 ** Copyright
@@ -43,6 +44,7 @@
 - [[file:#][/icon-file icon-white/ 最近の投稿]]
   - [[file:{lisp}(format%20"%25s/%25s"%20(ob:path-to-root)%20(ob:post-htmlfile%20(ob:get-last-post%20"Blog"%200))){/lisp}][{lisp}(ob:post-title (ob:get-last-post "Blog" 0)){/lisp}]]
   - [[file:{lisp}(format%20"%25s/%25s"%20(ob:path-to-root)%20(ob:post-htmlfile%20(ob:get-last-post%20"Blog"%201))){/lisp}][{lisp}(ob:post-title (ob:get-last-post "Blog" 1)){/lisp}]]
+  - [[file:{lisp}(format%20"%25s/%25s"%20(ob:path-to-root)%20(ob:post-htmlfile%20(ob:get-last-post%20"Blog"%202))){/lisp}][{lisp}(ob:post-title (ob:get-last-post "Blog" 2)){/lisp}]]
 
 - [[file:{lisp}(ob:path-to-root){/lisp}/tags][/icon-tags icon-white/ Tags]]
 
@@ -213,4 +215,317 @@
 
      ログインユーザ (団員) は練習日程の詳細や楽譜のダウンロードが可能。
      ゲストは次の演奏会の情報のみ参照可能。
+
+
+** DONE 「テスト駆動開発入門」写経 (1)					:tdd:
+   CLOSED: [2013-03-20 Wed 17:04]
+   :PROPERTIES:
+   :CUSTOM_ID: tdd-transcribing-1
+   :END:
+
+   「テスト駆動開発入門」を Ruby と RSpec で写経していきます。
+
+   例では、複数の通貨が混在した状況で計算のできる Money オブジェクトを作っていきます。
+
+*** 最初のテスト
+
+    いきなり Money オブジェクトの実装は難しいですので、最初はドルだけを扱うための
+    Dollar オブジェクトからはじめます。
+
+    まずはシンプルな乗法のテストから。
+
+    dollar\_spec.rb
+
+#+BEGIN_SRC ruby
+require 'dollar'
+
+describe Dollar, "#times" do
+  it "should be multiply" do
+    five = Dollar.new(5)
+    five.times!(2)
+    five.amount.should eq(10)
+  end
+end
+#+END_SRC
+
+    早速、rspec を実行します。
+
+#+BEGIN_EXAMPLE
+yusuke@localhost ~/src/tdd-transcribing/part1 $ rspec
+/home/yusuke/src/tdd-transcribing/part1/spec/dollar_spec.rb:3:in `<top (required)>': uninitialized constant Dollar (NameError)
+        from /home/yusuke/.rvm/gems/ruby-2.0.0-p0@tdd/gems/rspec-core-2.13.1/lib/rspec/core/configuration.rb:819:in `load'
+        from /home/yusuke/.rvm/gems/ruby-2.0.0-p0@tdd/gems/rspec-core-2.13.1/lib/rspec/core/configuration.rb:819:in `block in load_spec_files'
+        from /home/yusuke/.rvm/gems/ruby-2.0.0-p0@tdd/gems/rspec-core-2.13.1/lib/rspec/core/configuration.rb:819:in `each'
+        from /home/yusuke/.rvm/gems/ruby-2.0.0-p0@tdd/gems/rspec-core-2.13.1/lib/rspec/core/configuration.rb:819:in `load_spec_files'
+        from /home/yusuke/.rvm/gems/ruby-2.0.0-p0@tdd/gems/rspec-core-2.13.1/lib/rspec/core/command_line.rb:22:in `run'
+        from /home/yusuke/.rvm/gems/ruby-2.0.0-p0@tdd/gems/rspec-core-2.13.1/lib/rspec/core/runner.rb:80:in `run'
+        from /home/yusuke/.rvm/gems/ruby-2.0.0-p0@tdd/gems/rspec-core-2.13.1/lib/rspec/core/runner.rb:17:in `block in autorun'
+#+END_EXAMPLE
+
+*** dollar.rb の作成
+
+    当然、Dollar クラスがないということで失敗しましたので、dollar.rb を作成します。
+
+    dollar.rb
+
+#+BEGIN_SRC ruby
+class Dollar
+end
+#+END_SRC
+
+    実行します。
+
+#+BEGIN_EXAMPLE
+yusuke@localhost ~/src/tdd-transcribing/part1 $ rspec
+F
+
+Failures:
+
+  1) Dollar#times should be multiply
+     Failure/Error: five = Dollar.new(5)
+     ArgumentError:
+       wrong number of arguments (1 for 0)
+     # ./spec/dollar_spec.rb:5:in `initialize'
+     # ./spec/dollar_spec.rb:5:in `new'
+     # ./spec/dollar_spec.rb:5:in `block (2 levels) in <top (required)>'
+
+Finished in 0.00049 seconds
+1 example, 1 failure
+
+Failed examples:
+
+rspec ./spec/dollar_spec.rb:4 # Dollar#times should be multiply
+#+END_EXAMPLE
+
+    テストは失敗します。
+    コンストラクタの引数の数が違うと言われましたので、コンストラクタを作成します。
+
+    dollar.rb
+
+#+BEGIN_SRC ruby
+class Dollar
+  def initialize(amount)
+  end
+end
+#+END_SRC
+
+    テストを実行します。
+
+#+BEGIN_EXAMPLE
+yusuke@localhost ~/src/tdd-transcribing/part1 $ rspec
+F
+
+Failures:
+
+  1) Dollar#times should be multiply
+     Failure/Error: five.times!(2)
+     NoMethodError:
+       undefined method `times!' for #<Dollar:0x000000011e7cc8>
+     # ./spec/dollar_spec.rb:6:in `block (2 levels) in <top (required)>'
+
+Finished in 0.00048 seconds
+1 example, 1 failure
+
+Failed examples:
+
+rspec ./spec/dollar_spec.rb:4 # Dollar#times should be multiply
+#+END_EXAMPLE
+
+    次は times! メソッドがないと言ってきました。
+    とりあえず空の times! メソッドを実装しておきます
+
+    dollar.rb
+
+#+BEGIN_SRC ruby
+class Dollar
+  def initialize(amount)
+  end
+
+  def times!(multiplier)
+  end
+end
+#+END_SRC
+
+    テストを実行します。
+
+#+BEGIN_EXAMPLE
+yusuke@localhost ~/src/tdd-transcribing/part1 $ rspec
+F
+
+Failures:
+
+  1) Dollar#times should be multiply
+     Failure/Error: five.amount.should eq(10)
+     NoMethodError:
+       undefined method `amount' for #<Dollar:0x0000000118d750>
+     # ./spec/dollar_spec.rb:7:in `block (2 levels) in <top (required)>'
+
+Finished in 0.00049 seconds
+1 example, 1 failure
+
+Failed examples:
+
+rspec ./spec/dollar_spec.rb:4 # Dollar#times should be multiply
+#+END_EXAMPLE
+
+    今度は amount メソッドが無いと言います。作りましょう。
+
+    dollar.rb
+
+#+BEGIN_SRC ruby
+class Dollar
+  def initialize(amount)
+  end
+
+  def times!(multiplier)
+  end
+
+  def amount
+  end
+end
+#+END_SRC
+
+    テストを実行します。
+
+#+BEGIN_EXAMPLE
+yusuke@localhost ~/src/tdd-transcribing/part1 $ rspec
+F
+
+Failures:
+
+  1) Dollar#times should be multiply
+     Failure/Error: five.amount.should eq(10)
+       
+       expected: 10
+            got: nil
+       
+       (compared using ==)
+     # ./spec/dollar_spec.rb:7:in `block (2 levels) in <top (required)>'
+
+Finished in 0.00067 seconds
+1 example, 1 failure
+
+Failed examples:
+
+rspec ./spec/dollar_spec.rb:4 # Dollar#times should be multiply
+#+END_EXAMPLE
+
+    テストは失敗します。今度は 10 が返ってきてほしいところで nil が返ってきています。
+
+    テストを成功させるために必要なことは何か？
+    amount の返り値を設定します。
+
+    dollar.rb
+
+#+BEGIN_SRC ruby
+  def amount
+    10
+  end
+#+END_SRC
+
+    今の目標はとりあえずテストを通すことなので、こうしておきます。
+    正しい実装は後で考えます。
+
+    テストを実行しましょう。
+
+#+BEGIN_EXAMPLE
+yusuke@localhost ~/src/tdd-transcribing/part1 $ rspec
+.
+
+Finished in 0.00375 seconds
+1 example, 0 failures
+#+END_EXAMPLE
+
+    やっと成功しました。
+
+    しかし、実装がこのままでいいわけがないので、一般化を行う必要があります。
+
+    TDD は次のようなサイクルになります。
+
+    1. テストを作成する
+    2. テストを実行し、失敗を確認する
+    3. 最小限の修正を行う
+    4. テストを実行し、成功を確認する
+    5. 重複を取り除くためにリファクタリングをする
+
+
+*** コードのリファクタリング
+       
+    ここで 4 までを実行しました。次は重複を取り除きます。
+
+    非常にわかりにくいですが、amount の返り値の 10 が 5 * 2 であると考えれば、
+    amount の返り値とテストコード中の値が重複していることになります。
+
+    まずはインスタンス変数を利用し、 amount の 10 を 5 * 2 にして times! に移しましょう。
+
+    dollar.rb
+
+#+BEGIN_SRC ruby
+  def times!(multiplier)
+    @amount = 5 * 2
+  end
+
+  def amount
+    @amount
+  end
+#+END_SRC
+
+    このように修正してもテストに成功します (実行結果は省略)。
+
+    ここで、2 という数字は times! の引数として与えられたものなので、これを置き換えます。
+
+    dollar.rb
+
+#+BEGIN_SRC ruby
+  def times!(multiplier)
+    @amount = 5 * multiplier
+  end
+#+END_SRC
+
+    修正があるたびにテストを実行して確認します。これも成功します。
+
+    5 という数字はコンストラクタから渡されたものです。
+    これも amount インスタンス変数を使って、コンストラクタに移します。
+
+    dollar.rb
+
+#+BEGIN_SRC ruby
+  def initialize(amount)
+    @amount = amount
+  end
+
+  def times!(multiplier)
+    @amount = @amount * multiplier
+  end
+#+END_SRC
+
+    また、ruby には *= 演算子があるので、これを利用します。
+
+    dollar.rb
+
+#+BEGIN_SRC ruby
+  def times!(multiplier)
+    @amount *= multiplier
+  end
+#+END_SRC
+    
+    さらに、アクセサメソッドを定義するための仕組みもあるので、
+    これを利用して amount メソッドを削除します。
+    最終的な Dollar クラスは次のようになります。
+
+#+BEGIN_SRC ruby
+class Dollar
+  attr_reader :amount
+
+  def initialize(amount)
+    @amount = amount
+  end
+
+  def times!(multiplier)
+    @amount *= multiplier
+  end
+end
+#+END_SRC
+
+    ここまでが第 1 章の内容です。
 

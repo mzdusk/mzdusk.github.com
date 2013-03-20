@@ -3,9 +3,434 @@
   <title>mzduskの日記</title>
   <link href="http://mzdusk.github.com/index.xml" rel="self" />
   <link href="http://mzdusk.github.com/"/>
-  <updated>2013-03-19T22:58:45Z</updated>
+  <updated>2013-03-20T17:21:17Z</updated>
   <id>http://mzdusk.github.com/index.xml</id>
-  <entry><title type="html">Librarian 開発構想</title><author><name>mzdusk</name></author><link href="http://mzdusk.github.com//blog/2013/03/19_concept-librarian.html"/><updated>2013-03-19T22:50:00Z</updated><published>2013-03-19T22:50:00Z</published><id>blog/2013/03/19_concept-librarian.html</id><category scheme="/tags/memo.html" term="memo" label="memo"/><category scheme="/tags/librarian.html" term="librarian" label="librarian"/><content type="html">&lt;p&gt;
+  <entry><title type="html">「テスト駆動開発入門」写経 (1)</title><author><name>mzdusk</name></author><link href="http://mzdusk.github.com//blog/2013/03/20_tdd-transcribing-1.html"/><updated>2013-03-20T17:04:00Z</updated><published>2013-03-20T17:04:00Z</published><id>blog/2013/03/20_tdd-transcribing-1.html</id><category scheme="/tags/tdd.html" term="tdd" label="tdd"/><content type="html">&lt;p&gt;
+  &#12300;&#12486;&#12473;&#12488;&#39366;&#21205;&#38283;&#30330;&#20837;&#38272;&#12301;&#12434; Ruby &#12392; RSpec &#12391;&#20889;&#32076;&#12375;&#12390;&#12356;&#12365;&#12414;&#12377;&#12290;
+&lt;/p&gt;
+&lt;p&gt;
+  &#20363;&#12391;&#12399;&#12289;&#35079;&#25968;&#12398;&#36890;&#36008;&#12364;&#28151;&#22312;&#12375;&#12383;&#29366;&#27841;&#12391;&#35336;&#31639;&#12398;&#12391;&#12365;&#12427; Money &#12458;&#12502;&#12472;&#12455;&#12463;&#12488;&#12434;&#20316;&#12387;&#12390;&#12356;&#12365;&#12414;&#12377;&#12290;
+&lt;/p&gt;
+
+&lt;div id="outline-container-1" class="outline-3"&gt;
+&lt;h3 id="sec-1"&gt;&#26368;&#21021;&#12398;&#12486;&#12473;&#12488;&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-1"&gt;
+
+
+&lt;p&gt;
+    &#12356;&#12365;&#12394;&#12426; Money &#12458;&#12502;&#12472;&#12455;&#12463;&#12488;&#12398;&#23455;&#35013;&#12399;&#38627;&#12375;&#12356;&#12391;&#12377;&#12398;&#12391;&#12289;&#26368;&#21021;&#12399;&#12489;&#12523;&#12384;&#12369;&#12434;&#25201;&#12358;&#12383;&#12417;&#12398;
+    Dollar &#12458;&#12502;&#12472;&#12455;&#12463;&#12488;&#12363;&#12425;&#12399;&#12376;&#12417;&#12414;&#12377;&#12290;
+&lt;/p&gt;
+&lt;p&gt;
+    &#12414;&#12378;&#12399;&#12471;&#12531;&#12503;&#12523;&#12394;&#20055;&#27861;&#12398;&#12486;&#12473;&#12488;&#12363;&#12425;&#12290;
+&lt;/p&gt;
+&lt;p&gt;
+    dollar_spec.rb
+&lt;/p&gt;
+
+
+
+&lt;pre class="src src-ruby"&gt;require &lt;span style="color: #ffa07a;"&gt;'dollar'&lt;/span&gt;
+
+describe &lt;span style="color: #98fb98;"&gt;Dollar&lt;/span&gt;, &lt;span style="color: #ffa07a;"&gt;"#times"&lt;/span&gt; &lt;span style="color: #00ffff;"&gt;do&lt;/span&gt;
+  it &lt;span style="color: #ffa07a;"&gt;"should be multiply"&lt;/span&gt; &lt;span style="color: #00ffff;"&gt;do&lt;/span&gt;
+    five = &lt;span style="color: #98fb98;"&gt;Dollar&lt;/span&gt;.new(5)
+    five.times!(2)
+    five.amount.should eq(10)
+  &lt;span style="color: #00ffff;"&gt;end&lt;/span&gt;
+&lt;span style="color: #00ffff;"&gt;end&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;p&gt;
+    &#26089;&#36895;&#12289;rspec &#12434;&#23455;&#34892;&#12375;&#12414;&#12377;&#12290;
+&lt;/p&gt;
+
+
+
+&lt;pre class="example"&gt;yusuke@localhost ~/src/tdd-transcribing/part1 $ rspec
+/home/yusuke/src/tdd-transcribing/part1/spec/dollar_spec.rb:3:in `&amp;lt;top (required)&amp;gt;': uninitialized constant Dollar (NameError)
+        from /home/yusuke/.rvm/gems/ruby-2.0.0-p0@tdd/gems/rspec-core-2.13.1/lib/rspec/core/configuration.rb:819:in `load'
+        from /home/yusuke/.rvm/gems/ruby-2.0.0-p0@tdd/gems/rspec-core-2.13.1/lib/rspec/core/configuration.rb:819:in `block in load_spec_files'
+        from /home/yusuke/.rvm/gems/ruby-2.0.0-p0@tdd/gems/rspec-core-2.13.1/lib/rspec/core/configuration.rb:819:in `each'
+        from /home/yusuke/.rvm/gems/ruby-2.0.0-p0@tdd/gems/rspec-core-2.13.1/lib/rspec/core/configuration.rb:819:in `load_spec_files'
+        from /home/yusuke/.rvm/gems/ruby-2.0.0-p0@tdd/gems/rspec-core-2.13.1/lib/rspec/core/command_line.rb:22:in `run'
+        from /home/yusuke/.rvm/gems/ruby-2.0.0-p0@tdd/gems/rspec-core-2.13.1/lib/rspec/core/runner.rb:80:in `run'
+        from /home/yusuke/.rvm/gems/ruby-2.0.0-p0@tdd/gems/rspec-core-2.13.1/lib/rspec/core/runner.rb:17:in `block in autorun'
+&lt;/pre&gt;
+
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;div id="outline-container-2" class="outline-3"&gt;
+&lt;h3 id="sec-2"&gt;dollar.rb &#12398;&#20316;&#25104;&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-2"&gt;
+
+
+&lt;p&gt;
+    &#24403;&#28982;&#12289;Dollar &#12463;&#12521;&#12473;&#12364;&#12394;&#12356;&#12392;&#12356;&#12358;&#12371;&#12392;&#12391;&#22833;&#25943;&#12375;&#12414;&#12375;&#12383;&#12398;&#12391;&#12289;dollar.rb &#12434;&#20316;&#25104;&#12375;&#12414;&#12377;&#12290;
+&lt;/p&gt;
+&lt;p&gt;
+    dollar.rb
+&lt;/p&gt;
+
+
+
+&lt;pre class="src src-ruby"&gt;&lt;span style="color: #00ffff;"&gt;class&lt;/span&gt; &lt;span style="color: #98fb98;"&gt;Dollar&lt;/span&gt;
+&lt;span style="color: #00ffff;"&gt;end&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;p&gt;
+    &#23455;&#34892;&#12375;&#12414;&#12377;&#12290;
+&lt;/p&gt;
+
+
+
+&lt;pre class="example"&gt;yusuke@localhost ~/src/tdd-transcribing/part1 $ rspec
+F
+
+Failures:
+
+  1) Dollar#times should be multiply
+     Failure/Error: five = Dollar.new(5)
+     ArgumentError:
+       wrong number of arguments (1 for 0)
+     # ./spec/dollar_spec.rb:5:in `initialize'
+     # ./spec/dollar_spec.rb:5:in `new'
+     # ./spec/dollar_spec.rb:5:in `block (2 levels) in &amp;lt;top (required)&amp;gt;'
+
+Finished in 0.00049 seconds
+1 example, 1 failure
+
+Failed examples:
+
+rspec ./spec/dollar_spec.rb:4 # Dollar#times should be multiply
+&lt;/pre&gt;
+
+
+&lt;p&gt;
+    &#12486;&#12473;&#12488;&#12399;&#22833;&#25943;&#12375;&#12414;&#12377;&#12290;
+    &#12467;&#12531;&#12473;&#12488;&#12521;&#12463;&#12479;&#12398;&#24341;&#25968;&#12398;&#25968;&#12364;&#36949;&#12358;&#12392;&#35328;&#12431;&#12428;&#12414;&#12375;&#12383;&#12398;&#12391;&#12289;&#12467;&#12531;&#12473;&#12488;&#12521;&#12463;&#12479;&#12434;&#20316;&#25104;&#12375;&#12414;&#12377;&#12290;
+&lt;/p&gt;
+&lt;p&gt;
+    dollar.rb
+&lt;/p&gt;
+
+
+
+&lt;pre class="src src-ruby"&gt;&lt;span style="color: #00ffff;"&gt;class&lt;/span&gt; &lt;span style="color: #98fb98;"&gt;Dollar&lt;/span&gt;
+  &lt;span style="color: #00ffff;"&gt;def&lt;/span&gt; &lt;span style="color: #87cefa;"&gt;initialize&lt;/span&gt;(amount)
+  &lt;span style="color: #00ffff;"&gt;end&lt;/span&gt;
+&lt;span style="color: #00ffff;"&gt;end&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;p&gt;
+    &#12486;&#12473;&#12488;&#12434;&#23455;&#34892;&#12375;&#12414;&#12377;&#12290;
+&lt;/p&gt;
+
+
+
+&lt;pre class="example"&gt;yusuke@localhost ~/src/tdd-transcribing/part1 $ rspec
+F
+
+Failures:
+
+  1) Dollar#times should be multiply
+     Failure/Error: five.times!(2)
+     NoMethodError:
+       undefined method `times!' for #&amp;lt;Dollar:0x000000011e7cc8&amp;gt;
+     # ./spec/dollar_spec.rb:6:in `block (2 levels) in &amp;lt;top (required)&amp;gt;'
+
+Finished in 0.00048 seconds
+1 example, 1 failure
+
+Failed examples:
+
+rspec ./spec/dollar_spec.rb:4 # Dollar#times should be multiply
+&lt;/pre&gt;
+
+
+&lt;p&gt;
+    &#27425;&#12399; times! &#12513;&#12477;&#12483;&#12489;&#12364;&#12394;&#12356;&#12392;&#35328;&#12387;&#12390;&#12365;&#12414;&#12375;&#12383;&#12290;
+    &#12392;&#12426;&#12354;&#12360;&#12378;&#31354;&#12398; times! &#12513;&#12477;&#12483;&#12489;&#12434;&#23455;&#35013;&#12375;&#12390;&#12362;&#12365;&#12414;&#12377;
+&lt;/p&gt;
+&lt;p&gt;
+    dollar.rb
+&lt;/p&gt;
+
+
+
+&lt;pre class="src src-ruby"&gt;&lt;span style="color: #00ffff;"&gt;class&lt;/span&gt; &lt;span style="color: #98fb98;"&gt;Dollar&lt;/span&gt;
+  &lt;span style="color: #00ffff;"&gt;def&lt;/span&gt; &lt;span style="color: #87cefa;"&gt;initialize&lt;/span&gt;(amount)
+  &lt;span style="color: #00ffff;"&gt;end&lt;/span&gt;
+
+  &lt;span style="color: #00ffff;"&gt;def&lt;/span&gt; &lt;span style="color: #87cefa;"&gt;times!&lt;/span&gt;(multiplier)
+  &lt;span style="color: #00ffff;"&gt;end&lt;/span&gt;
+&lt;span style="color: #00ffff;"&gt;end&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;p&gt;
+    &#12486;&#12473;&#12488;&#12434;&#23455;&#34892;&#12375;&#12414;&#12377;&#12290;
+&lt;/p&gt;
+
+
+
+&lt;pre class="example"&gt;yusuke@localhost ~/src/tdd-transcribing/part1 $ rspec
+F
+
+Failures:
+
+  1) Dollar#times should be multiply
+     Failure/Error: five.amount.should eq(10)
+     NoMethodError:
+       undefined method `amount' for #&amp;lt;Dollar:0x0000000118d750&amp;gt;
+     # ./spec/dollar_spec.rb:7:in `block (2 levels) in &amp;lt;top (required)&amp;gt;'
+
+Finished in 0.00049 seconds
+1 example, 1 failure
+
+Failed examples:
+
+rspec ./spec/dollar_spec.rb:4 # Dollar#times should be multiply
+&lt;/pre&gt;
+
+
+&lt;p&gt;
+    &#20170;&#24230;&#12399; amount &#12513;&#12477;&#12483;&#12489;&#12364;&#28961;&#12356;&#12392;&#35328;&#12356;&#12414;&#12377;&#12290;&#20316;&#12426;&#12414;&#12375;&#12423;&#12358;&#12290;
+&lt;/p&gt;
+&lt;p&gt;
+    dollar.rb
+&lt;/p&gt;
+
+
+
+&lt;pre class="src src-ruby"&gt;&lt;span style="color: #00ffff;"&gt;class&lt;/span&gt; &lt;span style="color: #98fb98;"&gt;Dollar&lt;/span&gt;
+  &lt;span style="color: #00ffff;"&gt;def&lt;/span&gt; &lt;span style="color: #87cefa;"&gt;initialize&lt;/span&gt;(amount)
+  &lt;span style="color: #00ffff;"&gt;end&lt;/span&gt;
+
+  &lt;span style="color: #00ffff;"&gt;def&lt;/span&gt; &lt;span style="color: #87cefa;"&gt;times!&lt;/span&gt;(multiplier)
+  &lt;span style="color: #00ffff;"&gt;end&lt;/span&gt;
+
+  &lt;span style="color: #00ffff;"&gt;def&lt;/span&gt; &lt;span style="color: #87cefa;"&gt;amount&lt;/span&gt;
+  &lt;span style="color: #00ffff;"&gt;end&lt;/span&gt;
+&lt;span style="color: #00ffff;"&gt;end&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;p&gt;
+    &#12486;&#12473;&#12488;&#12434;&#23455;&#34892;&#12375;&#12414;&#12377;&#12290;
+&lt;/p&gt;
+
+
+
+&lt;pre class="example"&gt;yusuke@localhost ~/src/tdd-transcribing/part1 $ rspec
+F
+
+Failures:
+
+  1) Dollar#times should be multiply
+     Failure/Error: five.amount.should eq(10)
+       
+       expected: 10
+            got: nil
+       
+       (compared using ==)
+     # ./spec/dollar_spec.rb:7:in `block (2 levels) in &amp;lt;top (required)&amp;gt;'
+
+Finished in 0.00067 seconds
+1 example, 1 failure
+
+Failed examples:
+
+rspec ./spec/dollar_spec.rb:4 # Dollar#times should be multiply
+&lt;/pre&gt;
+
+
+&lt;p&gt;
+    &#12486;&#12473;&#12488;&#12399;&#22833;&#25943;&#12375;&#12414;&#12377;&#12290;&#20170;&#24230;&#12399; 10 &#12364;&#36820;&#12387;&#12390;&#12365;&#12390;&#12411;&#12375;&#12356;&#12392;&#12371;&#12429;&#12391; nil &#12364;&#36820;&#12387;&#12390;&#12365;&#12390;&#12356;&#12414;&#12377;&#12290;
+&lt;/p&gt;
+&lt;p&gt;
+    &#12486;&#12473;&#12488;&#12434;&#25104;&#21151;&#12373;&#12379;&#12427;&#12383;&#12417;&#12395;&#24517;&#35201;&#12394;&#12371;&#12392;&#12399;&#20309;&#12363;&#65311;
+    amount &#12398;&#36820;&#12426;&#20516;&#12434;&#35373;&#23450;&#12375;&#12414;&#12377;&#12290;
+&lt;/p&gt;
+&lt;p&gt;
+    dollar.rb
+&lt;/p&gt;
+
+
+
+&lt;pre class="src src-ruby"&gt;&lt;span style="color: #00ffff;"&gt;def&lt;/span&gt; &lt;span style="color: #87cefa;"&gt;amount&lt;/span&gt;
+  10
+&lt;span style="color: #00ffff;"&gt;end&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;p&gt;
+    &#20170;&#12398;&#30446;&#27161;&#12399;&#12392;&#12426;&#12354;&#12360;&#12378;&#12486;&#12473;&#12488;&#12434;&#36890;&#12377;&#12371;&#12392;&#12394;&#12398;&#12391;&#12289;&#12371;&#12358;&#12375;&#12390;&#12362;&#12365;&#12414;&#12377;&#12290;
+    &#27491;&#12375;&#12356;&#23455;&#35013;&#12399;&#24460;&#12391;&#32771;&#12360;&#12414;&#12377;&#12290;
+&lt;/p&gt;
+&lt;p&gt;
+    &#12486;&#12473;&#12488;&#12434;&#23455;&#34892;&#12375;&#12414;&#12375;&#12423;&#12358;&#12290;
+&lt;/p&gt;
+
+
+
+&lt;pre class="example"&gt;yusuke@localhost ~/src/tdd-transcribing/part1 $ rspec
+.
+
+Finished in 0.00375 seconds
+1 example, 0 failures
+&lt;/pre&gt;
+
+
+&lt;p&gt;
+    &#12420;&#12387;&#12392;&#25104;&#21151;&#12375;&#12414;&#12375;&#12383;&#12290;
+&lt;/p&gt;
+&lt;p&gt;
+    &#12375;&#12363;&#12375;&#12289;&#23455;&#35013;&#12364;&#12371;&#12398;&#12414;&#12414;&#12391;&#12356;&#12356;&#12431;&#12369;&#12364;&#12394;&#12356;&#12398;&#12391;&#12289;&#19968;&#33324;&#21270;&#12434;&#34892;&#12358;&#24517;&#35201;&#12364;&#12354;&#12426;&#12414;&#12377;&#12290;
+&lt;/p&gt;
+&lt;p&gt;
+    TDD &#12399;&#27425;&#12398;&#12424;&#12358;&#12394;&#12469;&#12452;&#12463;&#12523;&#12395;&#12394;&#12426;&#12414;&#12377;&#12290;
+&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&#12486;&#12473;&#12488;&#12434;&#20316;&#25104;&#12377;&#12427;
+&lt;/li&gt;
+&lt;li&gt;&#12486;&#12473;&#12488;&#12434;&#23455;&#34892;&#12375;&#12289;&#22833;&#25943;&#12434;&#30906;&#35469;&#12377;&#12427;
+&lt;/li&gt;
+&lt;li&gt;&#26368;&#23567;&#38480;&#12398;&#20462;&#27491;&#12434;&#34892;&#12358;
+&lt;/li&gt;
+&lt;li&gt;&#12486;&#12473;&#12488;&#12434;&#23455;&#34892;&#12375;&#12289;&#25104;&#21151;&#12434;&#30906;&#35469;&#12377;&#12427;
+&lt;/li&gt;
+&lt;li&gt;&#37325;&#35079;&#12434;&#21462;&#12426;&#38500;&#12367;&#12383;&#12417;&#12395;&#12522;&#12501;&#12449;&#12463;&#12479;&#12522;&#12531;&#12464;&#12434;&#12377;&#12427;
+&lt;/li&gt;
+&lt;/ol&gt;
+
+
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;div id="outline-container-3" class="outline-3"&gt;
+&lt;h3 id="sec-3"&gt;&#12467;&#12540;&#12489;&#12398;&#12522;&#12501;&#12449;&#12463;&#12479;&#12522;&#12531;&#12464;&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-3"&gt;
+
+
+&lt;p&gt;       
+    &#12371;&#12371;&#12391; 4 &#12414;&#12391;&#12434;&#23455;&#34892;&#12375;&#12414;&#12375;&#12383;&#12290;&#27425;&#12399;&#37325;&#35079;&#12434;&#21462;&#12426;&#38500;&#12365;&#12414;&#12377;&#12290;
+&lt;/p&gt;
+&lt;p&gt;
+    &#38750;&#24120;&#12395;&#12431;&#12363;&#12426;&#12395;&#12367;&#12356;&#12391;&#12377;&#12364;&#12289;amount &#12398;&#36820;&#12426;&#20516;&#12398; 10 &#12364; 5 * 2 &#12391;&#12354;&#12427;&#12392;&#32771;&#12360;&#12428;&#12400;&#12289;
+    amount &#12398;&#36820;&#12426;&#20516;&#12392;&#12486;&#12473;&#12488;&#12467;&#12540;&#12489;&#20013;&#12398;&#20516;&#12364;&#37325;&#35079;&#12375;&#12390;&#12356;&#12427;&#12371;&#12392;&#12395;&#12394;&#12426;&#12414;&#12377;&#12290;
+&lt;/p&gt;
+&lt;p&gt;
+    &#12414;&#12378;&#12399;&#12452;&#12531;&#12473;&#12479;&#12531;&#12473;&#22793;&#25968;&#12434;&#21033;&#29992;&#12375;&#12289; amount &#12398; 10 &#12434; 5 * 2 &#12395;&#12375;&#12390; times! &#12395;&#31227;&#12375;&#12414;&#12375;&#12423;&#12358;&#12290;
+&lt;/p&gt;
+&lt;p&gt;
+    dollar.rb
+&lt;/p&gt;
+
+
+
+&lt;pre class="src src-ruby"&gt;&lt;span style="color: #00ffff;"&gt;def&lt;/span&gt; &lt;span style="color: #87cefa;"&gt;times!&lt;/span&gt;(multiplier)
+  &lt;span style="color: #eedd82;"&gt;@amount&lt;/span&gt; = 5 * 2
+&lt;span style="color: #00ffff;"&gt;end&lt;/span&gt;
+
+&lt;span style="color: #00ffff;"&gt;def&lt;/span&gt; &lt;span style="color: #87cefa;"&gt;amount&lt;/span&gt;
+  &lt;span style="color: #eedd82;"&gt;@amount&lt;/span&gt;
+&lt;span style="color: #00ffff;"&gt;end&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;p&gt;
+    &#12371;&#12398;&#12424;&#12358;&#12395;&#20462;&#27491;&#12375;&#12390;&#12418;&#12486;&#12473;&#12488;&#12395;&#25104;&#21151;&#12375;&#12414;&#12377; (&#23455;&#34892;&#32080;&#26524;&#12399;&#30465;&#30053;)&#12290;
+&lt;/p&gt;
+&lt;p&gt;
+    &#12371;&#12371;&#12391;&#12289;2 &#12392;&#12356;&#12358;&#25968;&#23383;&#12399; times! &#12398;&#24341;&#25968;&#12392;&#12375;&#12390;&#19982;&#12360;&#12425;&#12428;&#12383;&#12418;&#12398;&#12394;&#12398;&#12391;&#12289;&#12371;&#12428;&#12434;&#32622;&#12365;&#25563;&#12360;&#12414;&#12377;&#12290;
+&lt;/p&gt;
+&lt;p&gt;
+    dollar.rb
+&lt;/p&gt;
+
+
+
+&lt;pre class="src src-ruby"&gt;&lt;span style="color: #00ffff;"&gt;def&lt;/span&gt; &lt;span style="color: #87cefa;"&gt;times!&lt;/span&gt;(multiplier)
+  &lt;span style="color: #eedd82;"&gt;@amount&lt;/span&gt; = 5 * multiplier
+&lt;span style="color: #00ffff;"&gt;end&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;p&gt;
+    &#20462;&#27491;&#12364;&#12354;&#12427;&#12383;&#12403;&#12395;&#12486;&#12473;&#12488;&#12434;&#23455;&#34892;&#12375;&#12390;&#30906;&#35469;&#12375;&#12414;&#12377;&#12290;&#12371;&#12428;&#12418;&#25104;&#21151;&#12375;&#12414;&#12377;&#12290;
+&lt;/p&gt;
+&lt;p&gt;
+    5 &#12392;&#12356;&#12358;&#25968;&#23383;&#12399;&#12467;&#12531;&#12473;&#12488;&#12521;&#12463;&#12479;&#12363;&#12425;&#28193;&#12373;&#12428;&#12383;&#12418;&#12398;&#12391;&#12377;&#12290;
+    &#12371;&#12428;&#12418; amount &#12452;&#12531;&#12473;&#12479;&#12531;&#12473;&#22793;&#25968;&#12434;&#20351;&#12387;&#12390;&#12289;&#12467;&#12531;&#12473;&#12488;&#12521;&#12463;&#12479;&#12395;&#31227;&#12375;&#12414;&#12377;&#12290;
+&lt;/p&gt;
+&lt;p&gt;
+    dollar.rb
+&lt;/p&gt;
+
+
+
+&lt;pre class="src src-ruby"&gt;&lt;span style="color: #00ffff;"&gt;def&lt;/span&gt; &lt;span style="color: #87cefa;"&gt;initialize&lt;/span&gt;(amount)
+  &lt;span style="color: #eedd82;"&gt;@amount&lt;/span&gt; = amount
+&lt;span style="color: #00ffff;"&gt;end&lt;/span&gt;
+
+&lt;span style="color: #00ffff;"&gt;def&lt;/span&gt; &lt;span style="color: #87cefa;"&gt;times!&lt;/span&gt;(multiplier)
+  &lt;span style="color: #eedd82;"&gt;@amount&lt;/span&gt; = &lt;span style="color: #eedd82;"&gt;@amount&lt;/span&gt; * multiplier
+&lt;span style="color: #00ffff;"&gt;end&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;p&gt;
+    &#12414;&#12383;&#12289;ruby &#12395;&#12399; *= &#28436;&#31639;&#23376;&#12364;&#12354;&#12427;&#12398;&#12391;&#12289;&#12371;&#12428;&#12434;&#21033;&#29992;&#12375;&#12414;&#12377;&#12290;
+&lt;/p&gt;
+&lt;p&gt;
+    dollar.rb
+&lt;/p&gt;
+
+
+
+&lt;pre class="src src-ruby"&gt;&lt;span style="color: #00ffff;"&gt;def&lt;/span&gt; &lt;span style="color: #87cefa;"&gt;times!&lt;/span&gt;(multiplier)
+  &lt;span style="color: #eedd82;"&gt;@amount&lt;/span&gt; *= multiplier
+&lt;span style="color: #00ffff;"&gt;end&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;p&gt;    
+    &#12373;&#12425;&#12395;&#12289;&#12450;&#12463;&#12475;&#12469;&#12513;&#12477;&#12483;&#12489;&#12434;&#23450;&#32681;&#12377;&#12427;&#12383;&#12417;&#12398;&#20181;&#32068;&#12415;&#12418;&#12354;&#12427;&#12398;&#12391;&#12289;
+    &#12371;&#12428;&#12434;&#21033;&#29992;&#12375;&#12390; amount &#12513;&#12477;&#12483;&#12489;&#12434;&#21066;&#38500;&#12375;&#12414;&#12377;&#12290;
+    &#26368;&#32066;&#30340;&#12394; Dollar &#12463;&#12521;&#12473;&#12399;&#27425;&#12398;&#12424;&#12358;&#12395;&#12394;&#12426;&#12414;&#12377;&#12290;
+&lt;/p&gt;
+
+
+
+&lt;pre class="src src-ruby"&gt;&lt;span style="color: #00ffff;"&gt;class&lt;/span&gt; &lt;span style="color: #98fb98;"&gt;Dollar&lt;/span&gt;
+  attr_reader &lt;span style="color: #7fffd4;"&gt;:amount&lt;/span&gt;
+
+  &lt;span style="color: #00ffff;"&gt;def&lt;/span&gt; &lt;span style="color: #87cefa;"&gt;initialize&lt;/span&gt;(amount)
+    &lt;span style="color: #eedd82;"&gt;@amount&lt;/span&gt; = amount
+  &lt;span style="color: #00ffff;"&gt;end&lt;/span&gt;
+
+  &lt;span style="color: #00ffff;"&gt;def&lt;/span&gt; &lt;span style="color: #87cefa;"&gt;times!&lt;/span&gt;(multiplier)
+    &lt;span style="color: #eedd82;"&gt;@amount&lt;/span&gt; *= multiplier
+  &lt;span style="color: #00ffff;"&gt;end&lt;/span&gt;
+&lt;span style="color: #00ffff;"&gt;end&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;p&gt;
+    &#12371;&#12371;&#12414;&#12391;&#12364;&#31532; 1 &#31456;&#12398;&#20869;&#23481;&#12391;&#12377;&#12290;
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</content></entry><entry><title type="html">Librarian 開発構想</title><author><name>mzdusk</name></author><link href="http://mzdusk.github.com//blog/2013/03/19_concept-librarian.html"/><updated>2013-03-19T22:50:00Z</updated><published>2013-03-19T22:50:00Z</published><id>blog/2013/03/19_concept-librarian.html</id><category scheme="/tags/memo.html" term="memo" label="memo"/><category scheme="/tags/librarian.html" term="librarian" label="librarian"/><content type="html">&lt;p&gt;
   Web &#12450;&#12503;&#12522;&#12465;&#12540;&#12471;&#12519;&#12531;&#12398;&#12493;&#12479;&#12434;&#24605;&#12356;&#12388;&#12356;&#12383;&#12398;&#12391;&#12513;&#12514;&#12290;
 &lt;/p&gt;
 
