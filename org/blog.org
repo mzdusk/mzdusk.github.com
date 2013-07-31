@@ -19,6 +19,7 @@
    - [[file:{lisp}(format%20"%25s/%25s"%20(ob:path-to-root)%20(ob:post-htmlfile%20(ob:get-last-post%20"Blog"%200))){/lisp}][{lisp}(ob:post-title (ob:get-last-post "Blog" 0)){/lisp}]]
    - [[file:{lisp}(format%20"%25s/%25s"%20(ob:path-to-root)%20(ob:post-htmlfile%20(ob:get-last-post%20"Blog"%201))){/lisp}][{lisp}(ob:post-title (ob:get-last-post "Blog" 1)){/lisp}]]
    - [[file:{lisp}(format%20"%25s/%25s"%20(ob:path-to-root)%20(ob:post-htmlfile%20(ob:get-last-post%20"Blog"%202))){/lisp}][{lisp}(ob:post-title (ob:get-last-post "Blog" 2)){/lisp}]]
+   - [[file:{lisp}(format%20"%25s/%25s"%20(ob:path-to-root)%20(ob:post-htmlfile%20(ob:get-last-post%20"Blog"%202))){/lisp}][{lisp}(ob:post-title (ob:get-last-post "Blog" 3)){/lisp}]]
 
 * Blog Details
 ** Copyright
@@ -45,6 +46,7 @@
   - [[file:{lisp}(format%20"%25s/%25s"%20(ob:path-to-root)%20(ob:post-htmlfile%20(ob:get-last-post%20"Blog"%200))){/lisp}][{lisp}(ob:post-title (ob:get-last-post "Blog" 0)){/lisp}]]
   - [[file:{lisp}(format%20"%25s/%25s"%20(ob:path-to-root)%20(ob:post-htmlfile%20(ob:get-last-post%20"Blog"%201))){/lisp}][{lisp}(ob:post-title (ob:get-last-post "Blog" 1)){/lisp}]]
   - [[file:{lisp}(format%20"%25s/%25s"%20(ob:path-to-root)%20(ob:post-htmlfile%20(ob:get-last-post%20"Blog"%202))){/lisp}][{lisp}(ob:post-title (ob:get-last-post "Blog" 2)){/lisp}]]
+  - [[file:{lisp}(format%20"%25s/%25s"%20(ob:path-to-root)%20(ob:post-htmlfile%20(ob:get-last-post%20"Blog"%202))){/lisp}][{lisp}(ob:post-title (ob:get-last-post "Blog" 3)){/lisp}]]
 
 - [[file:{lisp}(ob:path-to-root){/lisp}/tags][/icon-tags icon-white/ Tags]]
 
@@ -528,4 +530,30 @@ end
 #+END_SRC
 
     ここまでが第 1 章の内容です。
+
+
+** DONE emacs 24 での端末の色の設定				      :emacs:
+   CLOSED: [2013-07-31 Wed 21:58]
+   :PROPERTIES:
+   :CUSTOM_ID: emacs24-terminal-color
+   :END:
+
+   emacs 24 から theme フレームワークが導入されたため、 =ansi-term-color-vector= への設定が反映されなくなりました。
+
+   tango-dark などのテーマを使っている場合は、 =init.el= に次の設定を行うことで、端末の色の設定ができます。
+
+#+BEGIN_SRC lisp
+(load-theme 'tango-dark t)
+(custom-theme-set-faces
+ 'tango-dark
+ `(term-color-black ((t (:foreground "#555753" :background "#555753"))))
+ `(term-color-red ((t (:foreground "#EF2929" :background "#EF2929"))))
+ `(term-color-green ((t (:foreground "#8AE234" :background "#8AE234"))))
+ `(term-color-yellow ((t (:foreground "#FCE94F" :background "#FCE94F"))))
+ `(term-color-blue ((t (:foreground "#729FCF" :background "#729FCF"))))
+ `(term-color-magenta ((t (:foreground "#AD7FA8" :background "#AD7FA8"))))
+ `(term-color-cyan ((t (:foreground "#34E2E2" :background "#34E2E2"))))
+ `(term-color-white ((t (:foreground "#EEEEEC" :background "#EEEEEC"))))
+ )
+#+END_SRC
 

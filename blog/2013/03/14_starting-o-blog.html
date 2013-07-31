@@ -33,11 +33,13 @@
 	    <ul>
 <li><a href="#"><i>icon-file icon-white</i> 最近の投稿</a>
 <ul>
+<li><a href="../../../blog/2013/07/31_emacs24-terminal-color.html">emacs 24 での端末の色の設定</a>
+</li>
 <li><a href="../../../blog/2013/03/20_tdd-transcribing-1.html">「テスト駆動開発入門」写経 (1)</a>
 </li>
 <li><a href="../../../blog/2013/03/19_concept-librarian.html">Librarian 開発構想</a>
 </li>
-<li><a href="../../../blog/2013/03/14_starting-o-blog.html">o-blogでブログを始める</a>
+<li><a href="../../../blog/2013/03/19_concept-librarian.html">o-blogでブログを始める</a>
 
 </li>
 </ul>
@@ -82,7 +84,7 @@
 	</div>
 	<div class="span1">
 	  <div class="qr-code">
-  <img src="http://chart.apis.google.com/chart?chs=50x50&cht=qr&chld=|0&chl=http%3a%2f%2fmzdusk.github.com%2f%2fblog%2f2013%2f03%2f14_starting-o-blog.html"
+  <img src="http://chart.apis.google.com/chart?chs=50x50&cht=qr&chld=|0&chl=http%3A%2F%2Fmzdusk.github.com%2F%2Fblog%2F2013%2F03%2F14_starting-o-blog.html"
        alt="qr-code" />
 </div>
 
@@ -125,9 +127,9 @@
 
 
 
-<pre class="src src-org"><span style="color: #b3b3b3;">#+TITLE:</span><span style="color: #ff4500;"> </span><span style="color: #afeeee; font-size: 144%; font-weight: bold;">Blog Title</span>
-<span style="color: #ff4500;">#+DISQUS: disqus-account</span>
-<span style="color: #ff4500;">#+PUBLISH_DIR: blog</span>
+<pre class="src src-org"><span style="color: #b3b3b3;">#+TITLE:</span> <span style="color: #afeeee; font-weight: bold;">Blog Title</span>
+<span style="color: #73d216;">#+DISQUS: disqus-account</span>
+<span style="color: #73d216;">#+PUBLISH_DIR: blog</span>
 </pre>
 
 
@@ -147,13 +149,13 @@
 
 
 
-<pre class="src src-org"><span style="color: #87cefa;">* Page Title</span>
-<span style="color: #00ffff;">  :PROPERTIES:</span>
-  <span style="color: #00ffff;">:PAGE:</span> index.html
-  <span style="color: #00ffff;">:TEMPLATE:</span> blog_static_no_title.html
-<span style="color: #00ffff;">  :END:</span>
-
-&#12488;&#12483;&#12503;&#12506;&#12540;&#12472;&#12398;&#20869;&#23481;
+<pre class="src src-org"><span style="color: #fce94f;">* Page Title</span>
+,  :PROPERTIES:
+,  :PAGE: index.html
+,  :TEMPLATE: blog_static_no_title.html
+,  :END:
+,
+,&#12488;&#12483;&#12503;&#12506;&#12540;&#12472;&#12398;&#20869;&#23481;
 </pre>
 
 
@@ -174,36 +176,36 @@
 
 
 
-<pre class="src src-org"><span style="color: #87cefa;">* Blog Details</span>
-<span style="color: #eedd82;">** Copyright</span>
-<span style="color: #00ffff;">   :PROPERTIES:</span>
-   <span style="color: #00ffff;">:SNIPPET:</span> t
-<span style="color: #00ffff;">   :END:</span>
-
-   Copyright &#169; 20XX Foo Bar
-
-<span style="color: #eedd82;">** About</span>
-<span style="color: #00ffff;">   :PROPERTIES:</span>
-   <span style="color: #00ffff;">:SNIPPET:</span> t
-<span style="color: #00ffff;">   :END:</span>
-
-   This is About
-
-<span style="color: #eedd82;">** Navigation</span>
-<span style="color: #00ffff;">   :PROPERTIES:</span>
-   <span style="color: #00ffff;">:SNIPPET:</span> t
-<span style="color: #00ffff;">   :END:</span>
-
-- <span style="color: #00ffff; text-decoration: underline;">Blog Posts</span>
-  - <span style="color: #00ffff; text-decoration: underline;">Post 01</span>
-  - <span style="color: #00ffff; text-decoration: underline;">Post 01</span>
-
-<span style="color: #eedd82;">** Navigation Footer</span>
-<span style="color: #00ffff;">   :PROPERTIES:</span>
-   <span style="color: #00ffff;">:SNIPPET:</span> t
-<span style="color: #00ffff;">   :END:</span>
-
-   - <span style="color: #00ffff; text-decoration: underline;">Google</span>
+<pre class="src src-org"><span style="color: #fce94f;">* Blog Details</span>
+<span style="color: #fcaf3e;">** Copyright</span>
+,   :PROPERTIES:
+,   :SNIPPET: t
+,   :END:
+,
+,   Copyright &#169; 20XX Foo Bar
+,
+<span style="color: #fcaf3e;">** About</span>
+,   :PROPERTIES:
+,   :SNIPPET: t
+,   :END:
+,
+,   This is About
+,
+<span style="color: #fcaf3e;">** Navigation</span>
+,   :PROPERTIES:
+,   :SNIPPET: t
+,   :END:
+,
+,- <span style="color: #729fcf; text-decoration: underline;">Blog Posts</span>
+,  - <span style="color: #729fcf; text-decoration: underline;">Post 01</span>
+,  - <span style="color: #729fcf; text-decoration: underline;">Post 01</span>
+,
+<span style="color: #fcaf3e;">** Navigation Footer</span>
+,   :PROPERTIES:
+,   :SNIPPET: t
+,   :END:
+,
+,   - <span style="color: #729fcf; text-decoration: underline;">Google</span>
 </pre>
 
 
@@ -233,13 +235,13 @@
 
 
 
-<pre class="src src-org"><span style="color: #87cefa;">* Blog</span>
-<span style="color: #eedd82;">** </span><span style="color: #98fb98; font-weight: bold;">DONE</span><span style="color: #eedd82;"> &#26085;&#26412;&#35486;&#12479;&#12452;&#12488;&#12523;&#12398;&#26085;&#35352;</span>
-<span style="color: #00ffff;">   :PROPERTIES:</span>
-   <span style="color: #00ffff;">:CUSTOM_ID:</span> japanese-title-entry
-<span style="color: #00ffff;">   :END:</span>
+<pre class="src src-org"><span style="color: #fce94f;">* Blog</span>
+<span style="color: #fcaf3e;">** </span><span style="color: #98fb98; font-weight: bold;">DONE</span><span style="color: #fcaf3e;"> &#26085;&#26412;&#35486;&#12479;&#12452;&#12488;&#12523;&#12398;&#26085;&#35352;</span>
+,   :PROPERTIES:
+,   :CUSTOM_ID: japanese-title-entry
+,   :END:
 
-   &#12411;&#12370;&#12411;&#12370;
+,   &#12411;&#12370;&#12411;&#12370;
 </pre>
 
 
@@ -320,13 +322,13 @@ M-x org-publish-blog
 	    <nav id="archives" class="span3">
 	      <h1><a href="../../../archives.html">Archives</a></h1>
 	      <ul>
-		<li><a href="../../../blog/2013/03/20_tdd-transcribing-1.html">「テスト駆動開発入門」写経 (1)</a></li> <li><a href="../../../blog/2013/03/19_concept-librarian.html">Librarian 開発構想</a></li> <li><a href="../../../blog/2013/03/14_starting-o-blog.html">o-blogでブログを始める</a></li> 
+		<li><a href="../../../blog/2013/07/31_emacs24-terminal-color.html">emacs 24 での端末の色の設定</a></li> <li><a href="../../../blog/2013/03/20_tdd-transcribing-1.html">「テスト駆動開発入門」写経 (1)</a></li> <li><a href="../../../blog/2013/03/19_concept-librarian.html">Librarian 開発構想</a></li> <li><a href="../../../blog/2013/03/14_starting-o-blog.html">o-blogでブログを始める</a></li> 
 	      </ul>
 	    </nav>
 	    <nav class="tags span3">
 	      <h1><a href="../../../tags/index.html">Tags</a></h1>
 	      <ul>
-  <li style="font-size: 80.00%;"><a href="../../../tags/librarian.html">librarian</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/memo.html">memo</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/o-blog.html">o-blog</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/tdd.html">tdd</a></li> 
+  <li style="font-size: 80.00%;"><a href="../../../tags/emacs.html">emacs</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/librarian.html">librarian</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/memo.html">memo</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/o-blog.html">o-blog</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/tdd.html">tdd</a></li> 
 </ul>
 
 	    </nav>

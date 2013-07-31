@@ -3,9 +3,33 @@
   <title>mzduskの日記</title>
   <link href="http://mzdusk.github.com/index.xml" rel="self" />
   <link href="http://mzdusk.github.com/"/>
-  <updated>2013-03-20T17:21:17Z</updated>
+  <updated>2013-07-31T22:11:36Z</updated>
   <id>http://mzdusk.github.com/index.xml</id>
-  <entry><title type="html">「テスト駆動開発入門」写経 (1)</title><author><name>mzdusk</name></author><link href="http://mzdusk.github.com//blog/2013/03/20_tdd-transcribing-1.html"/><updated>2013-03-20T17:04:00Z</updated><published>2013-03-20T17:04:00Z</published><id>blog/2013/03/20_tdd-transcribing-1.html</id><category scheme="/tags/tdd.html" term="tdd" label="tdd"/><content type="html">&lt;p&gt;
+  <entry><title type="html">emacs 24 での端末の色の設定</title><author><name>mzdusk</name></author><link href="http://mzdusk.github.com//blog/2013/07/31_emacs24-terminal-color.html"/><updated>2013-07-31T21:58:00Z</updated><published>2013-07-31T21:58:00Z</published><id>blog/2013/07/31_emacs24-terminal-color.html</id><category scheme="/tags/emacs.html" term="emacs" label="emacs"/><content type="html">&lt;p&gt;
+   emacs 24 &#12363;&#12425; theme &#12501;&#12524;&#12540;&#12512;&#12527;&#12540;&#12463;&#12364;&#23566;&#20837;&#12373;&#12428;&#12383;&#12383;&#12417;&#12289; &lt;code&gt;ansi-term-color-vector&lt;/code&gt; &#12408;&#12398;&#35373;&#23450;&#12364;&#21453;&#26144;&#12373;&#12428;&#12394;&#12367;&#12394;&#12426;&#12414;&#12375;&#12383;&#12290;
+&lt;/p&gt;
+&lt;p&gt;
+   tango-dark &#12394;&#12393;&#12398;&#12486;&#12540;&#12510;&#12434;&#20351;&#12387;&#12390;&#12356;&#12427;&#22580;&#21512;&#12399;&#12289; &lt;code&gt;init.el&lt;/code&gt; &#12395;&#27425;&#12398;&#35373;&#23450;&#12434;&#34892;&#12358;&#12371;&#12392;&#12391;&#12289;&#31471;&#26411;&#12398;&#33394;&#12398;&#35373;&#23450;&#12364;&#12391;&#12365;&#12414;&#12377;&#12290;
+&lt;/p&gt;
+
+
+
+&lt;pre class="src src-lisp"&gt;(load-theme 'tango-dark t)
+(custom-theme-set-faces
+ 'tango-dark
+ `(term-color-black ((t (&lt;span style="color: #ad7fa8;"&gt;:foreground&lt;/span&gt; &lt;span style="color: #e9b96e;"&gt;"#555753"&lt;/span&gt; &lt;span style="color: #ad7fa8;"&gt;:background&lt;/span&gt; &lt;span style="color: #e9b96e;"&gt;"#555753"&lt;/span&gt;))))
+ `(term-color-red ((t (&lt;span style="color: #ad7fa8;"&gt;:foreground&lt;/span&gt; &lt;span style="color: #e9b96e;"&gt;"#EF2929"&lt;/span&gt; &lt;span style="color: #ad7fa8;"&gt;:background&lt;/span&gt; &lt;span style="color: #e9b96e;"&gt;"#EF2929"&lt;/span&gt;))))
+ `(term-color-green ((t (&lt;span style="color: #ad7fa8;"&gt;:foreground&lt;/span&gt; &lt;span style="color: #e9b96e;"&gt;"#8AE234"&lt;/span&gt; &lt;span style="color: #ad7fa8;"&gt;:background&lt;/span&gt; &lt;span style="color: #e9b96e;"&gt;"#8AE234"&lt;/span&gt;))))
+ `(term-color-yellow ((t (&lt;span style="color: #ad7fa8;"&gt;:foreground&lt;/span&gt; &lt;span style="color: #e9b96e;"&gt;"#FCE94F"&lt;/span&gt; &lt;span style="color: #ad7fa8;"&gt;:background&lt;/span&gt; &lt;span style="color: #e9b96e;"&gt;"#FCE94F"&lt;/span&gt;))))
+ `(term-color-blue ((t (&lt;span style="color: #ad7fa8;"&gt;:foreground&lt;/span&gt; &lt;span style="color: #e9b96e;"&gt;"#729FCF"&lt;/span&gt; &lt;span style="color: #ad7fa8;"&gt;:background&lt;/span&gt; &lt;span style="color: #e9b96e;"&gt;"#729FCF"&lt;/span&gt;))))
+ `(term-color-magenta ((t (&lt;span style="color: #ad7fa8;"&gt;:foreground&lt;/span&gt; &lt;span style="color: #e9b96e;"&gt;"#AD7FA8"&lt;/span&gt; &lt;span style="color: #ad7fa8;"&gt;:background&lt;/span&gt; &lt;span style="color: #e9b96e;"&gt;"#AD7FA8"&lt;/span&gt;))))
+ `(term-color-cyan ((t (&lt;span style="color: #ad7fa8;"&gt;:foreground&lt;/span&gt; &lt;span style="color: #e9b96e;"&gt;"#34E2E2"&lt;/span&gt; &lt;span style="color: #ad7fa8;"&gt;:background&lt;/span&gt; &lt;span style="color: #e9b96e;"&gt;"#34E2E2"&lt;/span&gt;))))
+ `(term-color-white ((t (&lt;span style="color: #ad7fa8;"&gt;:foreground&lt;/span&gt; &lt;span style="color: #e9b96e;"&gt;"#EEEEEC"&lt;/span&gt; &lt;span style="color: #ad7fa8;"&gt;:background&lt;/span&gt; &lt;span style="color: #e9b96e;"&gt;"#EEEEEC"&lt;/span&gt;))))
+ )
+&lt;/pre&gt;
+
+
+</content></entry><entry><title type="html">「テスト駆動開発入門」写経 (1)</title><author><name>mzdusk</name></author><link href="http://mzdusk.github.com//blog/2013/03/20_tdd-transcribing-1.html"/><updated>2013-03-20T17:04:00Z</updated><published>2013-03-20T17:04:00Z</published><id>blog/2013/03/20_tdd-transcribing-1.html</id><category scheme="/tags/tdd.html" term="tdd" label="tdd"/><content type="html">&lt;p&gt;
   &#12300;&#12486;&#12473;&#12488;&#39366;&#21205;&#38283;&#30330;&#20837;&#38272;&#12301;&#12434; Ruby &#12392; RSpec &#12391;&#20889;&#32076;&#12375;&#12390;&#12356;&#12365;&#12414;&#12377;&#12290;
 &lt;/p&gt;
 &lt;p&gt;
@@ -30,15 +54,15 @@
 
 
 
-&lt;pre class="src src-ruby"&gt;require &lt;span style="color: #ffa07a;"&gt;'dollar'&lt;/span&gt;
+&lt;pre class="src src-ruby"&gt;require &lt;span style="color: #e9b96e;"&gt;'dollar'&lt;/span&gt;
 
-describe &lt;span style="color: #98fb98;"&gt;Dollar&lt;/span&gt;, &lt;span style="color: #ffa07a;"&gt;"#times"&lt;/span&gt; &lt;span style="color: #00ffff;"&gt;do&lt;/span&gt;
-  it &lt;span style="color: #ffa07a;"&gt;"should be multiply"&lt;/span&gt; &lt;span style="color: #00ffff;"&gt;do&lt;/span&gt;
-    five = &lt;span style="color: #98fb98;"&gt;Dollar&lt;/span&gt;.new(5)
+describe &lt;span style="color: #8cc4ff;"&gt;Dollar&lt;/span&gt;, &lt;span style="color: #e9b96e;"&gt;"#times"&lt;/span&gt; &lt;span style="color: #b4fa70;"&gt;do&lt;/span&gt;
+  it &lt;span style="color: #e9b96e;"&gt;"should be multiply"&lt;/span&gt; &lt;span style="color: #b4fa70;"&gt;do&lt;/span&gt;
+    five = &lt;span style="color: #8cc4ff;"&gt;Dollar&lt;/span&gt;.new(5)
     five.times!(2)
     five.amount.should eq(10)
-  &lt;span style="color: #00ffff;"&gt;end&lt;/span&gt;
-&lt;span style="color: #00ffff;"&gt;end&lt;/span&gt;
+  &lt;span style="color: #b4fa70;"&gt;end&lt;/span&gt;
+&lt;span style="color: #b4fa70;"&gt;end&lt;/span&gt;
 &lt;/pre&gt;
 
 
@@ -78,8 +102,8 @@ describe &lt;span style="color: #98fb98;"&gt;Dollar&lt;/span&gt;, &lt;span style
 
 
 
-&lt;pre class="src src-ruby"&gt;&lt;span style="color: #00ffff;"&gt;class&lt;/span&gt; &lt;span style="color: #98fb98;"&gt;Dollar&lt;/span&gt;
-&lt;span style="color: #00ffff;"&gt;end&lt;/span&gt;
+&lt;pre class="src src-ruby"&gt;&lt;span style="color: #b4fa70;"&gt;class&lt;/span&gt; &lt;span style="color: #8cc4ff;"&gt;Dollar&lt;/span&gt;
+&lt;span style="color: #b4fa70;"&gt;end&lt;/span&gt;
 &lt;/pre&gt;
 
 
@@ -121,10 +145,10 @@ rspec ./spec/dollar_spec.rb:4 # Dollar#times should be multiply
 
 
 
-&lt;pre class="src src-ruby"&gt;&lt;span style="color: #00ffff;"&gt;class&lt;/span&gt; &lt;span style="color: #98fb98;"&gt;Dollar&lt;/span&gt;
-  &lt;span style="color: #00ffff;"&gt;def&lt;/span&gt; &lt;span style="color: #87cefa;"&gt;initialize&lt;/span&gt;(amount)
-  &lt;span style="color: #00ffff;"&gt;end&lt;/span&gt;
-&lt;span style="color: #00ffff;"&gt;end&lt;/span&gt;
+&lt;pre class="src src-ruby"&gt;&lt;span style="color: #b4fa70;"&gt;class&lt;/span&gt; &lt;span style="color: #8cc4ff;"&gt;Dollar&lt;/span&gt;
+  &lt;span style="color: #b4fa70;"&gt;def&lt;/span&gt; &lt;span style="color: #fce94f;"&gt;initialize&lt;/span&gt;(amount)
+  &lt;span style="color: #b4fa70;"&gt;end&lt;/span&gt;
+&lt;span style="color: #b4fa70;"&gt;end&lt;/span&gt;
 &lt;/pre&gt;
 
 
@@ -164,13 +188,13 @@ rspec ./spec/dollar_spec.rb:4 # Dollar#times should be multiply
 
 
 
-&lt;pre class="src src-ruby"&gt;&lt;span style="color: #00ffff;"&gt;class&lt;/span&gt; &lt;span style="color: #98fb98;"&gt;Dollar&lt;/span&gt;
-  &lt;span style="color: #00ffff;"&gt;def&lt;/span&gt; &lt;span style="color: #87cefa;"&gt;initialize&lt;/span&gt;(amount)
-  &lt;span style="color: #00ffff;"&gt;end&lt;/span&gt;
+&lt;pre class="src src-ruby"&gt;&lt;span style="color: #b4fa70;"&gt;class&lt;/span&gt; &lt;span style="color: #8cc4ff;"&gt;Dollar&lt;/span&gt;
+  &lt;span style="color: #b4fa70;"&gt;def&lt;/span&gt; &lt;span style="color: #fce94f;"&gt;initialize&lt;/span&gt;(amount)
+  &lt;span style="color: #b4fa70;"&gt;end&lt;/span&gt;
 
-  &lt;span style="color: #00ffff;"&gt;def&lt;/span&gt; &lt;span style="color: #87cefa;"&gt;times!&lt;/span&gt;(multiplier)
-  &lt;span style="color: #00ffff;"&gt;end&lt;/span&gt;
-&lt;span style="color: #00ffff;"&gt;end&lt;/span&gt;
+  &lt;span style="color: #b4fa70;"&gt;def&lt;/span&gt; &lt;span style="color: #fce94f;"&gt;times!&lt;/span&gt;(multiplier)
+  &lt;span style="color: #b4fa70;"&gt;end&lt;/span&gt;
+&lt;span style="color: #b4fa70;"&gt;end&lt;/span&gt;
 &lt;/pre&gt;
 
 
@@ -209,16 +233,16 @@ rspec ./spec/dollar_spec.rb:4 # Dollar#times should be multiply
 
 
 
-&lt;pre class="src src-ruby"&gt;&lt;span style="color: #00ffff;"&gt;class&lt;/span&gt; &lt;span style="color: #98fb98;"&gt;Dollar&lt;/span&gt;
-  &lt;span style="color: #00ffff;"&gt;def&lt;/span&gt; &lt;span style="color: #87cefa;"&gt;initialize&lt;/span&gt;(amount)
-  &lt;span style="color: #00ffff;"&gt;end&lt;/span&gt;
+&lt;pre class="src src-ruby"&gt;&lt;span style="color: #b4fa70;"&gt;class&lt;/span&gt; &lt;span style="color: #8cc4ff;"&gt;Dollar&lt;/span&gt;
+  &lt;span style="color: #b4fa70;"&gt;def&lt;/span&gt; &lt;span style="color: #fce94f;"&gt;initialize&lt;/span&gt;(amount)
+  &lt;span style="color: #b4fa70;"&gt;end&lt;/span&gt;
 
-  &lt;span style="color: #00ffff;"&gt;def&lt;/span&gt; &lt;span style="color: #87cefa;"&gt;times!&lt;/span&gt;(multiplier)
-  &lt;span style="color: #00ffff;"&gt;end&lt;/span&gt;
+  &lt;span style="color: #b4fa70;"&gt;def&lt;/span&gt; &lt;span style="color: #fce94f;"&gt;times!&lt;/span&gt;(multiplier)
+  &lt;span style="color: #b4fa70;"&gt;end&lt;/span&gt;
 
-  &lt;span style="color: #00ffff;"&gt;def&lt;/span&gt; &lt;span style="color: #87cefa;"&gt;amount&lt;/span&gt;
-  &lt;span style="color: #00ffff;"&gt;end&lt;/span&gt;
-&lt;span style="color: #00ffff;"&gt;end&lt;/span&gt;
+  &lt;span style="color: #b4fa70;"&gt;def&lt;/span&gt; &lt;span style="color: #fce94f;"&gt;amount&lt;/span&gt;
+  &lt;span style="color: #b4fa70;"&gt;end&lt;/span&gt;
+&lt;span style="color: #b4fa70;"&gt;end&lt;/span&gt;
 &lt;/pre&gt;
 
 
@@ -264,9 +288,9 @@ rspec ./spec/dollar_spec.rb:4 # Dollar#times should be multiply
 
 
 
-&lt;pre class="src src-ruby"&gt;&lt;span style="color: #00ffff;"&gt;def&lt;/span&gt; &lt;span style="color: #87cefa;"&gt;amount&lt;/span&gt;
+&lt;pre class="src src-ruby"&gt;&lt;span style="color: #b4fa70;"&gt;def&lt;/span&gt; &lt;span style="color: #fce94f;"&gt;amount&lt;/span&gt;
   10
-&lt;span style="color: #00ffff;"&gt;end&lt;/span&gt;
+&lt;span style="color: #b4fa70;"&gt;end&lt;/span&gt;
 &lt;/pre&gt;
 
 
@@ -337,13 +361,13 @@ Finished in 0.00375 seconds
 
 
 
-&lt;pre class="src src-ruby"&gt;&lt;span style="color: #00ffff;"&gt;def&lt;/span&gt; &lt;span style="color: #87cefa;"&gt;times!&lt;/span&gt;(multiplier)
-  &lt;span style="color: #eedd82;"&gt;@amount&lt;/span&gt; = 5 * 2
-&lt;span style="color: #00ffff;"&gt;end&lt;/span&gt;
+&lt;pre class="src src-ruby"&gt;&lt;span style="color: #b4fa70;"&gt;def&lt;/span&gt; &lt;span style="color: #fce94f;"&gt;times!&lt;/span&gt;(multiplier)
+  &lt;span style="color: #fcaf3e;"&gt;@amount&lt;/span&gt; = 5 * 2
+&lt;span style="color: #b4fa70;"&gt;end&lt;/span&gt;
 
-&lt;span style="color: #00ffff;"&gt;def&lt;/span&gt; &lt;span style="color: #87cefa;"&gt;amount&lt;/span&gt;
-  &lt;span style="color: #eedd82;"&gt;@amount&lt;/span&gt;
-&lt;span style="color: #00ffff;"&gt;end&lt;/span&gt;
+&lt;span style="color: #b4fa70;"&gt;def&lt;/span&gt; &lt;span style="color: #fce94f;"&gt;amount&lt;/span&gt;
+  &lt;span style="color: #fcaf3e;"&gt;@amount&lt;/span&gt;
+&lt;span style="color: #b4fa70;"&gt;end&lt;/span&gt;
 &lt;/pre&gt;
 
 
@@ -359,9 +383,9 @@ Finished in 0.00375 seconds
 
 
 
-&lt;pre class="src src-ruby"&gt;&lt;span style="color: #00ffff;"&gt;def&lt;/span&gt; &lt;span style="color: #87cefa;"&gt;times!&lt;/span&gt;(multiplier)
-  &lt;span style="color: #eedd82;"&gt;@amount&lt;/span&gt; = 5 * multiplier
-&lt;span style="color: #00ffff;"&gt;end&lt;/span&gt;
+&lt;pre class="src src-ruby"&gt;&lt;span style="color: #b4fa70;"&gt;def&lt;/span&gt; &lt;span style="color: #fce94f;"&gt;times!&lt;/span&gt;(multiplier)
+  &lt;span style="color: #fcaf3e;"&gt;@amount&lt;/span&gt; = 5 * multiplier
+&lt;span style="color: #b4fa70;"&gt;end&lt;/span&gt;
 &lt;/pre&gt;
 
 
@@ -378,13 +402,13 @@ Finished in 0.00375 seconds
 
 
 
-&lt;pre class="src src-ruby"&gt;&lt;span style="color: #00ffff;"&gt;def&lt;/span&gt; &lt;span style="color: #87cefa;"&gt;initialize&lt;/span&gt;(amount)
-  &lt;span style="color: #eedd82;"&gt;@amount&lt;/span&gt; = amount
-&lt;span style="color: #00ffff;"&gt;end&lt;/span&gt;
+&lt;pre class="src src-ruby"&gt;&lt;span style="color: #b4fa70;"&gt;def&lt;/span&gt; &lt;span style="color: #fce94f;"&gt;initialize&lt;/span&gt;(amount)
+  &lt;span style="color: #fcaf3e;"&gt;@amount&lt;/span&gt; = amount
+&lt;span style="color: #b4fa70;"&gt;end&lt;/span&gt;
 
-&lt;span style="color: #00ffff;"&gt;def&lt;/span&gt; &lt;span style="color: #87cefa;"&gt;times!&lt;/span&gt;(multiplier)
-  &lt;span style="color: #eedd82;"&gt;@amount&lt;/span&gt; = &lt;span style="color: #eedd82;"&gt;@amount&lt;/span&gt; * multiplier
-&lt;span style="color: #00ffff;"&gt;end&lt;/span&gt;
+&lt;span style="color: #b4fa70;"&gt;def&lt;/span&gt; &lt;span style="color: #fce94f;"&gt;times!&lt;/span&gt;(multiplier)
+  &lt;span style="color: #fcaf3e;"&gt;@amount&lt;/span&gt; = &lt;span style="color: #fcaf3e;"&gt;@amount&lt;/span&gt; * multiplier
+&lt;span style="color: #b4fa70;"&gt;end&lt;/span&gt;
 &lt;/pre&gt;
 
 
@@ -397,9 +421,9 @@ Finished in 0.00375 seconds
 
 
 
-&lt;pre class="src src-ruby"&gt;&lt;span style="color: #00ffff;"&gt;def&lt;/span&gt; &lt;span style="color: #87cefa;"&gt;times!&lt;/span&gt;(multiplier)
-  &lt;span style="color: #eedd82;"&gt;@amount&lt;/span&gt; *= multiplier
-&lt;span style="color: #00ffff;"&gt;end&lt;/span&gt;
+&lt;pre class="src src-ruby"&gt;&lt;span style="color: #b4fa70;"&gt;def&lt;/span&gt; &lt;span style="color: #fce94f;"&gt;times!&lt;/span&gt;(multiplier)
+  &lt;span style="color: #fcaf3e;"&gt;@amount&lt;/span&gt; *= multiplier
+&lt;span style="color: #b4fa70;"&gt;end&lt;/span&gt;
 &lt;/pre&gt;
 
 
@@ -411,17 +435,17 @@ Finished in 0.00375 seconds
 
 
 
-&lt;pre class="src src-ruby"&gt;&lt;span style="color: #00ffff;"&gt;class&lt;/span&gt; &lt;span style="color: #98fb98;"&gt;Dollar&lt;/span&gt;
-  attr_reader &lt;span style="color: #7fffd4;"&gt;:amount&lt;/span&gt;
+&lt;pre class="src src-ruby"&gt;&lt;span style="color: #b4fa70;"&gt;class&lt;/span&gt; &lt;span style="color: #8cc4ff;"&gt;Dollar&lt;/span&gt;
+  attr_reader &lt;span style="color: #e6a8df;"&gt;:amount&lt;/span&gt;
 
-  &lt;span style="color: #00ffff;"&gt;def&lt;/span&gt; &lt;span style="color: #87cefa;"&gt;initialize&lt;/span&gt;(amount)
-    &lt;span style="color: #eedd82;"&gt;@amount&lt;/span&gt; = amount
-  &lt;span style="color: #00ffff;"&gt;end&lt;/span&gt;
+  &lt;span style="color: #b4fa70;"&gt;def&lt;/span&gt; &lt;span style="color: #fce94f;"&gt;initialize&lt;/span&gt;(amount)
+    &lt;span style="color: #fcaf3e;"&gt;@amount&lt;/span&gt; = amount
+  &lt;span style="color: #b4fa70;"&gt;end&lt;/span&gt;
 
-  &lt;span style="color: #00ffff;"&gt;def&lt;/span&gt; &lt;span style="color: #87cefa;"&gt;times!&lt;/span&gt;(multiplier)
-    &lt;span style="color: #eedd82;"&gt;@amount&lt;/span&gt; *= multiplier
-  &lt;span style="color: #00ffff;"&gt;end&lt;/span&gt;
-&lt;span style="color: #00ffff;"&gt;end&lt;/span&gt;
+  &lt;span style="color: #b4fa70;"&gt;def&lt;/span&gt; &lt;span style="color: #fce94f;"&gt;times!&lt;/span&gt;(multiplier)
+    &lt;span style="color: #fcaf3e;"&gt;@amount&lt;/span&gt; *= multiplier
+  &lt;span style="color: #b4fa70;"&gt;end&lt;/span&gt;
+&lt;span style="color: #b4fa70;"&gt;end&lt;/span&gt;
 &lt;/pre&gt;
 
 
@@ -510,9 +534,9 @@ Finished in 0.00375 seconds
 
 
 
-&lt;pre class="src src-org"&gt;&lt;span style="color: #b3b3b3;"&gt;#+TITLE:&lt;/span&gt;&lt;span style="color: #ff4500;"&gt; &lt;/span&gt;&lt;span style="color: #afeeee; font-size: 144%; font-weight: bold;"&gt;Blog Title&lt;/span&gt;
-&lt;span style="color: #ff4500;"&gt;#+DISQUS: disqus-account&lt;/span&gt;
-&lt;span style="color: #ff4500;"&gt;#+PUBLISH_DIR: blog&lt;/span&gt;
+&lt;pre class="src src-org"&gt;&lt;span style="color: #b3b3b3;"&gt;#+TITLE:&lt;/span&gt; &lt;span style="color: #afeeee; font-weight: bold;"&gt;Blog Title&lt;/span&gt;
+&lt;span style="color: #73d216;"&gt;#+DISQUS: disqus-account&lt;/span&gt;
+&lt;span style="color: #73d216;"&gt;#+PUBLISH_DIR: blog&lt;/span&gt;
 &lt;/pre&gt;
 
 
@@ -532,13 +556,13 @@ Finished in 0.00375 seconds
 
 
 
-&lt;pre class="src src-org"&gt;&lt;span style="color: #87cefa;"&gt;* Page Title&lt;/span&gt;
-&lt;span style="color: #00ffff;"&gt;  :PROPERTIES:&lt;/span&gt;
-  &lt;span style="color: #00ffff;"&gt;:PAGE:&lt;/span&gt; index.html
-  &lt;span style="color: #00ffff;"&gt;:TEMPLATE:&lt;/span&gt; blog_static_no_title.html
-&lt;span style="color: #00ffff;"&gt;  :END:&lt;/span&gt;
-
-&amp;#12488;&amp;#12483;&amp;#12503;&amp;#12506;&amp;#12540;&amp;#12472;&amp;#12398;&amp;#20869;&amp;#23481;
+&lt;pre class="src src-org"&gt;&lt;span style="color: #fce94f;"&gt;* Page Title&lt;/span&gt;
+,  :PROPERTIES:
+,  :PAGE: index.html
+,  :TEMPLATE: blog_static_no_title.html
+,  :END:
+,
+,&amp;#12488;&amp;#12483;&amp;#12503;&amp;#12506;&amp;#12540;&amp;#12472;&amp;#12398;&amp;#20869;&amp;#23481;
 &lt;/pre&gt;
 
 
@@ -559,36 +583,36 @@ Finished in 0.00375 seconds
 
 
 
-&lt;pre class="src src-org"&gt;&lt;span style="color: #87cefa;"&gt;* Blog Details&lt;/span&gt;
-&lt;span style="color: #eedd82;"&gt;** Copyright&lt;/span&gt;
-&lt;span style="color: #00ffff;"&gt;   :PROPERTIES:&lt;/span&gt;
-   &lt;span style="color: #00ffff;"&gt;:SNIPPET:&lt;/span&gt; t
-&lt;span style="color: #00ffff;"&gt;   :END:&lt;/span&gt;
-
-   Copyright &amp;#169; 20XX Foo Bar
-
-&lt;span style="color: #eedd82;"&gt;** About&lt;/span&gt;
-&lt;span style="color: #00ffff;"&gt;   :PROPERTIES:&lt;/span&gt;
-   &lt;span style="color: #00ffff;"&gt;:SNIPPET:&lt;/span&gt; t
-&lt;span style="color: #00ffff;"&gt;   :END:&lt;/span&gt;
-
-   This is About
-
-&lt;span style="color: #eedd82;"&gt;** Navigation&lt;/span&gt;
-&lt;span style="color: #00ffff;"&gt;   :PROPERTIES:&lt;/span&gt;
-   &lt;span style="color: #00ffff;"&gt;:SNIPPET:&lt;/span&gt; t
-&lt;span style="color: #00ffff;"&gt;   :END:&lt;/span&gt;
-
-- &lt;span style="color: #00ffff; text-decoration: underline;"&gt;Blog Posts&lt;/span&gt;
-  - &lt;span style="color: #00ffff; text-decoration: underline;"&gt;Post 01&lt;/span&gt;
-  - &lt;span style="color: #00ffff; text-decoration: underline;"&gt;Post 01&lt;/span&gt;
-
-&lt;span style="color: #eedd82;"&gt;** Navigation Footer&lt;/span&gt;
-&lt;span style="color: #00ffff;"&gt;   :PROPERTIES:&lt;/span&gt;
-   &lt;span style="color: #00ffff;"&gt;:SNIPPET:&lt;/span&gt; t
-&lt;span style="color: #00ffff;"&gt;   :END:&lt;/span&gt;
-
-   - &lt;span style="color: #00ffff; text-decoration: underline;"&gt;Google&lt;/span&gt;
+&lt;pre class="src src-org"&gt;&lt;span style="color: #fce94f;"&gt;* Blog Details&lt;/span&gt;
+&lt;span style="color: #fcaf3e;"&gt;** Copyright&lt;/span&gt;
+,   :PROPERTIES:
+,   :SNIPPET: t
+,   :END:
+,
+,   Copyright &amp;#169; 20XX Foo Bar
+,
+&lt;span style="color: #fcaf3e;"&gt;** About&lt;/span&gt;
+,   :PROPERTIES:
+,   :SNIPPET: t
+,   :END:
+,
+,   This is About
+,
+&lt;span style="color: #fcaf3e;"&gt;** Navigation&lt;/span&gt;
+,   :PROPERTIES:
+,   :SNIPPET: t
+,   :END:
+,
+,- &lt;span style="color: #729fcf; text-decoration: underline;"&gt;Blog Posts&lt;/span&gt;
+,  - &lt;span style="color: #729fcf; text-decoration: underline;"&gt;Post 01&lt;/span&gt;
+,  - &lt;span style="color: #729fcf; text-decoration: underline;"&gt;Post 01&lt;/span&gt;
+,
+&lt;span style="color: #fcaf3e;"&gt;** Navigation Footer&lt;/span&gt;
+,   :PROPERTIES:
+,   :SNIPPET: t
+,   :END:
+,
+,   - &lt;span style="color: #729fcf; text-decoration: underline;"&gt;Google&lt;/span&gt;
 &lt;/pre&gt;
 
 
@@ -618,13 +642,13 @@ Finished in 0.00375 seconds
 
 
 
-&lt;pre class="src src-org"&gt;&lt;span style="color: #87cefa;"&gt;* Blog&lt;/span&gt;
-&lt;span style="color: #eedd82;"&gt;** &lt;/span&gt;&lt;span style="color: #98fb98; font-weight: bold;"&gt;DONE&lt;/span&gt;&lt;span style="color: #eedd82;"&gt; &amp;#26085;&amp;#26412;&amp;#35486;&amp;#12479;&amp;#12452;&amp;#12488;&amp;#12523;&amp;#12398;&amp;#26085;&amp;#35352;&lt;/span&gt;
-&lt;span style="color: #00ffff;"&gt;   :PROPERTIES:&lt;/span&gt;
-   &lt;span style="color: #00ffff;"&gt;:CUSTOM_ID:&lt;/span&gt; japanese-title-entry
-&lt;span style="color: #00ffff;"&gt;   :END:&lt;/span&gt;
+&lt;pre class="src src-org"&gt;&lt;span style="color: #fce94f;"&gt;* Blog&lt;/span&gt;
+&lt;span style="color: #fcaf3e;"&gt;** &lt;/span&gt;&lt;span style="color: #98fb98; font-weight: bold;"&gt;DONE&lt;/span&gt;&lt;span style="color: #fcaf3e;"&gt; &amp;#26085;&amp;#26412;&amp;#35486;&amp;#12479;&amp;#12452;&amp;#12488;&amp;#12523;&amp;#12398;&amp;#26085;&amp;#35352;&lt;/span&gt;
+,   :PROPERTIES:
+,   :CUSTOM_ID: japanese-title-entry
+,   :END:
 
-   &amp;#12411;&amp;#12370;&amp;#12411;&amp;#12370;
+,   &amp;#12411;&amp;#12370;&amp;#12411;&amp;#12370;
 &lt;/pre&gt;
 
 

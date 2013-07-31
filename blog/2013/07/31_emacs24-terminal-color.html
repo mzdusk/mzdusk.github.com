@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8"/>
-    <title>Librarian 開発構想</title>
+    <title>emacs 24 での端末の色の設定</title>
     <link rel="stylesheet" type="text/less" href="../../../style/less/o-blog.less"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="generator" content="o-blog version 1.2-135-g4063552"/>
@@ -64,7 +64,7 @@
       <div class="container">
 	<ul class="breadcrumb">
   <li><a href="../../../index.html">Home</a> <span class="divider">/</span></li>
-  <li><a href="../../../blog/index.html">Blog</a> <span class="divider">/</span></li><li><a href="../../../blog/2013/index.html">2013</a> <span class="divider">/</span></li><li><a href="../../../blog/2013/03/index.html">03</a> <span class="divider">/</span></li><li>Librarian 開発構想</li>
+  <li><a href="../../../blog/index.html">Blog</a> <span class="divider">/</span></li><li><a href="../../../blog/2013/index.html">2013</a> <span class="divider">/</span></li><li><a href="../../../blog/2013/07/index.html">07</a> <span class="divider">/</span></li><li>emacs 24 での端末の色の設定</li>
   </ul>
 
       </div>
@@ -77,23 +77,23 @@
     <div class="well">
       <div class="row">
 	<div class="date span1">
-	  <div class=" date-d">19</div>
-	  <div class=" date-m"><a href="../../../blog/2013/03/index.html">Mar</a></div>
+	  <div class=" date-d">31</div>
+	  <div class=" date-m"><a href="../../../blog/2013/07/index.html">Jul</a></div>
 	  <div class=" date-y"><a href="../../../blog/2013/index.html">2013</a>
 	  </div>
 	</div>
 	<div class="span1">
 	  <div class="qr-code">
-  <img src="http://chart.apis.google.com/chart?chs=50x50&cht=qr&chld=|0&chl=http%3A%2F%2Fmzdusk.github.com%2F%2Fblog%2F2013%2F03%2F19_concept-librarian.html"
+  <img src="http://chart.apis.google.com/chart?chs=50x50&cht=qr&chld=|0&chl=http%3A%2F%2Fmzdusk.github.com%2F%2Fblog%2F2013%2F07%2F31_emacs24-terminal-color.html"
        alt="qr-code" />
 </div>
 
 	</div>
-	<h1 class="offset2" style="font-size: 250%">Librarian 開発構想</h1>
+	<h1 class="offset2" style="font-size: 250%">emacs 24 での端末の色の設定</h1>
       </div>
       <nav>
 	<ul class="pager">
-	  <li class="previous"><a href="../../../blog/2013/03/14_starting-o-blog.html"><i class="icon-chevron-left"></i>&nbsp;o-blogでブログを始める</a></li><li class="next" style="text-align: right;"><a href="../../../blog/2013/03/20_tdd-transcribing-1.html">「テスト駆動開発入門」写経 (1)&nbsp;<i class="icon-chevron-right"></i></a></li>
+	  <li class="previous"><a href="../../../blog/2013/03/20_tdd-transcribing-1.html"><i class="icon-chevron-left"></i>&nbsp;「テスト駆動開発入門」写経 (1)</a></li><li class="next">&nbsp;</li>
 	</ul>
       </nav>
     </div>
@@ -101,67 +101,38 @@
   </header>
   <div class="article-content">
     <p>
-  Web アプリケーションのネタを思いついたのでメモ。
-</p>
-
-<div id="outline-container-1" class="outline-3">
-<h3 id="sec-1">Librarian</h3>
-<div class="outline-text-3" id="text-1">
-
-<p>   音楽団体向け Web アプリケーション。
+   emacs 24 から theme フレームワークが導入されたため、 <code>ansi-term-color-vector</code> への設定が反映されなくなりました。
 </p>
 <p>
-   演奏会や練習日程、楽譜などの管理を行う。
-   アプリケーション名は楽団で楽譜の管理を担当する者 (ライブラリアン) から。
+   tango-dark などのテーマを使っている場合は、 <code>init.el</code> に次の設定を行うことで、端末の色の設定ができます。
 </p>
 
-</div>
-
-<div id="outline-container-1-1" class="outline-4">
-<h4 id="sec-1-1">主な機能</h4>
-<div class="outline-text-4" id="text-1-1">
-
-<ul>
-<li>演奏会情報の管理
-<ul>
-<li>日程
-</li>
-<li>曲目
-</li>
-</ul>
-
-</li>
-<li>練習日程の管理
-</li>
-<li>楽譜の管理
-</li>
-<li>団員の管理
-<ul>
-<li>担当パート
-</li>
-</ul>
-
-</li>
-</ul>
 
 
+<pre class="src src-lisp">(load-theme 'tango-dark t)
+(custom-theme-set-faces
+ 'tango-dark
+ `(term-color-black ((t (<span style="color: #ad7fa8;">:foreground</span> <span style="color: #e9b96e;">"#555753"</span> <span style="color: #ad7fa8;">:background</span> <span style="color: #e9b96e;">"#555753"</span>))))
+ `(term-color-red ((t (<span style="color: #ad7fa8;">:foreground</span> <span style="color: #e9b96e;">"#EF2929"</span> <span style="color: #ad7fa8;">:background</span> <span style="color: #e9b96e;">"#EF2929"</span>))))
+ `(term-color-green ((t (<span style="color: #ad7fa8;">:foreground</span> <span style="color: #e9b96e;">"#8AE234"</span> <span style="color: #ad7fa8;">:background</span> <span style="color: #e9b96e;">"#8AE234"</span>))))
+ `(term-color-yellow ((t (<span style="color: #ad7fa8;">:foreground</span> <span style="color: #e9b96e;">"#FCE94F"</span> <span style="color: #ad7fa8;">:background</span> <span style="color: #e9b96e;">"#FCE94F"</span>))))
+ `(term-color-blue ((t (<span style="color: #ad7fa8;">:foreground</span> <span style="color: #e9b96e;">"#729FCF"</span> <span style="color: #ad7fa8;">:background</span> <span style="color: #e9b96e;">"#729FCF"</span>))))
+ `(term-color-magenta ((t (<span style="color: #ad7fa8;">:foreground</span> <span style="color: #e9b96e;">"#AD7FA8"</span> <span style="color: #ad7fa8;">:background</span> <span style="color: #e9b96e;">"#AD7FA8"</span>))))
+ `(term-color-cyan ((t (<span style="color: #ad7fa8;">:foreground</span> <span style="color: #e9b96e;">"#34E2E2"</span> <span style="color: #ad7fa8;">:background</span> <span style="color: #e9b96e;">"#34E2E2"</span>))))
+ `(term-color-white ((t (<span style="color: #ad7fa8;">:foreground</span> <span style="color: #e9b96e;">"#EEEEEC"</span> <span style="color: #ad7fa8;">:background</span> <span style="color: #e9b96e;">"#EEEEEC"</span>))))
+ )
+</pre>
 
-<p>
-    ログインユーザ (団員) は練習日程の詳細や楽譜のダウンロードが可能。
-    ゲストは次の演奏会の情報のみ参照可能。
-</p>
-</div>
-</div>
-</div>
+
 
   </div>
   
   <footer class="well article-footer">
-    Posted on <time datetime="2013-03-19T22:50:00Z"> Tuesday March, 19 2013 at 22:50:00</time>.
+    Posted on <time datetime="2013-07-31T21:58:00Z"> Wednesday July, 31 2013 at 21:58:00</time>.
     <nav class="tag-cloud">
       <h1><i class="icon-tags"></i> related tags</h1>
       <ul>
-	<li class="label label-inverse small"><a href="../../../tags/memo.html">memo</a></li><li class="label label-inverse small"><a href="../../../tags/librarian.html">librarian</a></li>
+	<li class="label label-inverse small"><a href="../../../tags/emacs.html">emacs</a></li>
       </ul>
     </nav>
   </footer>
